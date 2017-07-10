@@ -1,0 +1,31 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #F6F7F9;
+}
+
+.container {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
+.container p {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin: 10px;
+}
+
+.social-icons img {
+  height: 25px;
+}
