@@ -1,3 +1,3 @@
 # Website
 
-https://leopradel.com
+https://www.leopradel.com
