@@ -78,10 +78,18 @@ const Home = () => {
         <h1>{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
         <div className="social-icons">
-          <a href={data.site.siteMetadata.twitter} target="_blank">
+          <a
+            href={data.site.siteMetadata.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={twitter} alt="twitter" />
           </a>
-          <a href={data.site.siteMetadata.github} target="_blank">
+          <a
+            href={data.site.siteMetadata.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={github} alt="github" />
           </a>
         </div>
