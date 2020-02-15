@@ -6,5 +6,5 @@ module.exports = {
     github: 'https://github.com/pradel',
     author: `@leopradel`,
   },
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [`gatsby-plugin-typescript`, `gatsby-plugin-react-helmet`],
 };
