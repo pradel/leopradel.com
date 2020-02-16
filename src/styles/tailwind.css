@@ -16,7 +16,7 @@
     @apply text-black font-bold;
   }
   & a {
-    @apply text-pink-400 font-semibold;
+    @apply text-pink-400 font-semibold border-b border-pink-400;
   }
   & strong a {
     @apply font-bold;
@@ -42,5 +42,12 @@
     @screen sm {
       @apply pl-10;
     }
+  }
+  /* gatsby header anchor */
+  & .anchor {
+    @apply border-none mt-1;
+  }
+  & .anchor svg {
+    @apply fill-current;
   }
 }
