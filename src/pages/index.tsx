@@ -1,6 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import 'typeface-raleway';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
 import twitter from '../icons/twitter.svg';
 import github from '../icons/github.svg';
@@ -65,14 +64,52 @@ const Home = () => {
           github
         }
       }
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+            }
+          }
+        }
+      }
     }
   `);
+
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <React.Fragment>
       <SEO title="Home" />
 
-      <div className="container-head">
+      <div className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+        {posts.map(({ node }: any) => (
+          <article key={node.fields.slug} className="mb-12">
+            <header>
+              <h3 className="text-2xl text-black font-bold hover:text-gray-900">
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </h3>
+              <p className="text-sm mt-0 mb-2 text-gray-600">
+                {node.frontmatter.date}
+              </p>
+            </header>
+            <section>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description,
+                }}
+              />
+            </section>
+          </article>
+        ))}
+      </div>
+
+      {/* <div className="container-head">
         <h1>{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
         <div className="social-icons">
@@ -106,7 +143,7 @@ const Home = () => {
             </article>
           ))}
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };
