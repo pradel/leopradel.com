@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import 'typeface-raleway';
-import '../styles/style.css';
 import SEO from '../components/seo';
 import twitter from '../icons/twitter.svg';
 import github from '../icons/github.svg';

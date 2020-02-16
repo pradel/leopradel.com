@@ -12,16 +12,24 @@ const BlogPostTemplate = ({ data, pageContext, location }: any) => {
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
-  console.log(data);
+  console.log(data, pageContext);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 xl:px-12">
+    <div className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
       <article>
         <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1 className="leading-tight text-3xl font-bold text-black">
+            {post.frontmatter.title}
+          </h1>
+          <p className="text-sm mt-0 mb-4 text-gray-600">
+            {post.frontmatter.date}
+          </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <hr className="my-8 border-b-2 border-gray-200" />
+        <section
+          className="markdown"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </div>
   );

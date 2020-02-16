@@ -15,6 +15,7 @@
     "gatsby-plugin-react-helmet": "3.1.22",
     "gatsby-plugin-sharp": "2.4.5",
     "gatsby-plugin-typescript": "2.1.27",
+    "gatsby-remark-autolink-headers": "2.1.24",
     "gatsby-remark-copy-linked-files": "2.1.37",
     "gatsby-remark-images": "3.1.44",
     "gatsby-remark-prismjs": "3.3.31",
@@ -35,6 +36,7 @@
     "@types/react": "16.9.19",
     "@types/react-dom": "16.9.5",
     "@types/react-helmet": "5.0.15",
+    "postcss-nesting": "7.0.1",
     "prettier": "1.19.1",
     "tailwindcss": "1.2.0",
     "typescript": "3.7.5"
