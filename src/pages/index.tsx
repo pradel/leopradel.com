@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
-import twitter from '../icons/twitter.svg';
-import github from '../icons/github.svg';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 const projects = [
   {
@@ -87,7 +87,9 @@ const Home = () => {
     <React.Fragment>
       <SEO title="Home" />
 
-      <div className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+      <Header />
+
+      <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
         {posts.map(({ node }: any) => (
           <article key={node.fields.slug} className="mb-12">
             <header>
@@ -107,7 +109,9 @@ const Home = () => {
             </section>
           </article>
         ))}
-      </div>
+      </main>
+
+      <Footer />
 
       {/* <div className="container-head">
         <h1>{data.site.siteMetadata.title}</h1>

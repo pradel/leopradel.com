@@ -1,115 +1,46 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import '../styles/tailwind.css';
-
-// import Bio from '../components/bio';
-// import Layout from '../components/layout';
-// import SEO from '../components/seo';
-// import { rhythm, scale } from '../utils/typography';
+import { containerClasses } from '../utils';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 const BlogPostTemplate = ({ data, pageContext, location }: any) => {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
 
-  console.log(data, pageContext);
+  // TODO SEO
 
   return (
-    <div className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
-      <article>
-        <header>
-          <h1 className="leading-tight text-3xl font-bold text-black">
-            {post.frontmatter.title}
-          </h1>
-          <p className="text-sm mt-0 mb-4 text-gray-600">
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <hr className="my-8 border-b-2 border-gray-200" />
-        <section
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </article>
-    </div>
+    <React.Fragment>
+      <Header />
+
+      <div className={`${containerClasses} mt-16 mb-4`}>
+        <article>
+          <header>
+            <h1 className="leading-tight text-3xl font-bold text-black">
+              {post.frontmatter.title}
+            </h1>
+            <p className="text-sm mt-0 mb-4 text-gray-600">
+              {post.frontmatter.date}
+            </p>
+          </header>
+          <hr className="my-8 border-b-2 border-gray-200" />
+          <section
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </article>
+      </div>
+
+      <Footer />
+    </React.Fragment>
   );
-
-  // return (
-  //   <Layout location={location} title={siteTitle}>
-  //     <SEO
-  //       title={post.frontmatter.title}
-  //       description={post.frontmatter.description || post.excerpt}
-  //     />
-  //     <article>
-  //       <header>
-  //         <h1
-  //           style={{
-  //             marginTop: rhythm(1),
-  //             marginBottom: 0,
-  //           }}
-  //         >
-  //           {post.frontmatter.title}
-  //         </h1>
-  //         <p
-  //           style={{
-  //             ...scale(-1 / 5),
-  //             display: `block`,
-  //             marginBottom: rhythm(1),
-  //           }}
-  //         >
-  //           {post.frontmatter.date}
-  //         </p>
-  //       </header>
-  //       <section dangerouslySetInnerHTML={{ __html: post.html }} />
-  //       <hr
-  //         style={{
-  //           marginBottom: rhythm(1),
-  //         }}
-  //       />
-  //       <footer>
-  //         <Bio />
-  //       </footer>
-  //     </article>
-
-  //     <nav>
-  //       <ul
-  //         style={{
-  //           display: `flex`,
-  //           flexWrap: `wrap`,
-  //           justifyContent: `space-between`,
-  //           listStyle: `none`,
-  //           padding: 0,
-  //         }}
-  //       >
-  //         <li>
-  //           {previous && (
-  //             <Link to={previous.fields.slug} rel="prev">
-  //               ← {previous.frontmatter.title}
-  //             </Link>
-  //           )}
-  //         </li>
-  //         <li>
-  //           {next && (
-  //             <Link to={next.fields.slug} rel="next">
-  //               {next.frontmatter.title} →
-  //             </Link>
-  //           )}
-  //         </li>
-  //       </ul>
-  //     </nav>
-  //   </Layout>
-  // );
 };
 
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
