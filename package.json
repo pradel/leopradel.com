@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "gatsby": "2.19.17",
+    "gatsby-plugin-postcss": "2.1.20",
     "gatsby-plugin-react-helmet": "3.1.22",
     "gatsby-plugin-sharp": "2.4.5",
     "gatsby-plugin-typescript": "2.1.27",
@@ -27,7 +28,6 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-helmet": "5.2.1",
-    "reset-css": "5.0.1",
     "typeface-raleway": "0.0.75"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "@types/react-dom": "16.9.5",
     "@types/react-helmet": "5.0.15",
     "prettier": "1.19.1",
+    "tailwindcss": "1.2.0",
     "typescript": "3.7.5"
   },
   "prettier": {

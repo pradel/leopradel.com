@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import '../styles/tailwind.css';
 
 // import Bio from '../components/bio';
 // import Layout from '../components/layout';
@@ -13,7 +14,17 @@ const BlogPostTemplate = ({ data, pageContext, location }: any) => {
 
   console.log(data);
 
-  return null;
+  return (
+    <div className="mx-auto max-w-3xl px-6 xl:px-12">
+      <article>
+        <header>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+      </article>
+    </div>
+  );
 
   // return (
   //   <Layout location={location} title={siteTitle}>

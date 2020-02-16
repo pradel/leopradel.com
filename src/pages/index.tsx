@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import 'reset-css/reset.css';
 import 'typeface-raleway';
 import '../styles/style.css';
 import SEO from '../components/seo';
