@@ -1,5 +1,5 @@
 import React from 'react';
-import NextApp from 'next/app';
+import { AppProps } from 'next/app';
 import {
   ThemeProvider,
   CSSReset,
@@ -7,19 +7,15 @@ import {
   theme,
 } from '@chakra-ui/core';
 
-class App extends NextApp {
-  render() {
-    const { Component } = this.props;
-
-    return (
-      <ThemeProvider theme={theme}>
-        <ColorModeProvider value="light">
-          <CSSReset />
-          <Component />
-        </ColorModeProvider>
-      </ThemeProvider>
-    );
-  }
-}
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider value="light">
+        <CSSReset />
+        <Component {...pageProps} />
+      </ColorModeProvider>
+    </ThemeProvider>
+  );
+};
 
 export default App;

@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "allowJs": false,
-    "skipLibCheck": false
+    "skipLibCheck": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
