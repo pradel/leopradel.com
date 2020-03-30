@@ -3,8 +3,10 @@ import { GetStaticProps } from 'next';
 import NextLink from 'next/link';
 import { Box, Link, Heading, Text } from '@chakra-ui/core';
 import { format } from 'date-fns';
-// @ts-ignore
-import { frontMatter as blogPosts } from '../blog/**/index.mdx';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import readingTime from 'reading-time';
+import matter from 'gray-matter';
 
 interface BlogProps {
   posts: {
@@ -44,29 +46,33 @@ const Blog = ({ posts }: BlogProps) => {
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const posts = blogPosts.map(
-    (blogPost: { [key: string]: any }): BlogProps['posts'][0] => {
-      // First step is to go through all the posts and check that they are well formatted
-      if (!blogPost.title) {
-        throw new Error(`Title required for ${blogPost.__resourcePath}`);
-      }
-      if (!blogPost.date) {
-        throw new Error(`Date required for ${blogPost.__resourcePath}`);
-      }
-      if (!blogPost.description) {
-        throw new Error(`Date required for ${blogPost.__resourcePath}`);
-      }
+  const postsDirectory = join(process.cwd(), 'src', 'blog');
+  const folderNames = readdirSync(postsDirectory);
 
-      const slug = blogPost.__resourcePath.split('/');
-      return {
-        slug: slug[slug.length - 2],
-        date: format(new Date(blogPost.date), 'MMMM d, yyyy'),
-        title: blogPost.title,
-        description: blogPost.description,
-        readingTime: blogPost.readingTime.text,
-      };
+  const posts = folderNames.map((folderName) => {
+    const fullPath = join(postsDirectory, folderName, 'index.md');
+    const fileContents = readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    // First we go through all the posts and check that they are well formatted
+    if (!data.title) {
+      throw new Error(`Title required for ${fullPath}`);
     }
-  );
+    if (!data.date) {
+      throw new Error(`Date required for ${fullPath}`);
+    }
+    if (!data.description) {
+      throw new Error(`Date required for ${fullPath}`);
+    }
+
+    return {
+      slug: folderName,
+      date: format(new Date(data.date), 'MMMM d, yyyy'),
+      title: data.title,
+      description: data.description,
+      readingTime: readingTime(content).text,
+    };
+  });
 
   // TODO sort by date
 
