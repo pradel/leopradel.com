@@ -1,0 +1,57 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+
+/* https://github.com/tailwindcss/discuss/issues/243#issuecomment-481175230 */
+.markdown {
+  @apply text-lg text-gray-800 leading-normal;
+  & > * + *,
+  & li + li,
+  & li > p + p {
+    @apply mt-6;
+  }
+  & strong {
+    @apply text-black font-bold;
+  }
+  & a {
+    @apply text-pink-400 font-semibold border-b border-pink-400;
+  }
+  & strong a {
+    @apply font-bold;
+  }
+  & h1 {
+    @apply leading-tight text-2xl font-bold text-black mb-2 mt-10;
+  }
+  & h2 {
+    @apply leading-tight text-xl font-bold text-black mb-2 mt-10;
+  }
+  & h3 {
+    @apply leading-tight text-lg font-bold text-black mt-8 -mb-2;
+  }
+  & code {
+    @apply font-mono text-sm inline bg-gray-200 px-1;
+  }
+  & pre code {
+    @apply block bg-black p-4 rounded;
+  }
+  & blockquote {
+    @apply border-l-4 border-gray-400 pl-4 italic;
+  }
+  & ul,
+  & ol {
+    @apply pl-5;
+    @screen sm {
+      @apply pl-10;
+    }
+  }
+  /* gatsby header anchor */
+  & .anchor {
+    @apply border-none mt-1;
+  }
+  & .anchor svg {
+    @apply fill-current;
+  }
+}

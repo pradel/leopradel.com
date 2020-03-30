@@ -1,7 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import NextLink from 'next/link';
-import { Box, Link, Heading, Text } from '@chakra-ui/core';
 import { format } from 'date-fns';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -20,28 +19,25 @@ interface BlogProps {
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <Box margin="auto" maxWidth="42rem" px={6} as="main">
+    <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
       {posts.map((post) => (
-        <Box key={post.slug} mt={8} as="article">
+        <article key={post.slug} className="mb-12">
           <header>
-            <Heading as="h3" size="lg" mb={1}>
+            <h3 className="leading-tight text-3xl font-bold text-black">
               <NextLink href={`/blog/${post.slug}`} passHref>
-                <Link
-                  _hover={{ textDecoration: 'none' }}
-                  style={{ color: '#FD4659' }}
-                >
-                  {post.title}
-                </Link>
+                <a>{post.title}</a>
               </NextLink>
-            </Heading>
-            <Text fontSize="xs" color="gray.500" as="small">
+            </h3>
+            <p className="text-sm mt-0 mb-2 text-gray-600">
               {post.date} • {post.readingTime}
-            </Text>
+            </p>
           </header>
-          <Text>{post.description}</Text>
-        </Box>
+          <section>
+            <p>{post.description}</p>
+          </section>
+        </article>
       ))}
-    </Box>
+    </main>
   );
 };
 

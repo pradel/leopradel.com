@@ -1,6 +1,5 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { Box, Link, Heading, Text } from '@chakra-ui/core';
 import { format } from 'date-fns';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -21,9 +20,12 @@ const BlogPost = ({ post }: BlogPostProps) => {
   // TODO SEO
 
   return (
-    <Box margin="auto" maxWidth="42rem" px={6} as="main">
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </Box>
+    <div className="mx-auto max-w-3xl px-6 xl:px-12">
+      <section
+        className="markdown"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
+    </div>
   );
 };
 
