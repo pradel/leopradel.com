@@ -1,50 +1,59 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import NextLink from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import { Button, Link, Heading, Text } from '@chakra-ui/core';
+import { Box, Link, Heading, Text } from '@chakra-ui/core';
+import { format } from 'date-fns';
+// @ts-ignore
+import { frontMatter as blogPosts } from '../blog/**/index.mdx';
 
 interface BlogProps {
   posts: {
     slug: string;
+    date: string;
     title: string;
-    content: string;
+    description: string;
   }[];
 }
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <React.Fragment>
+    <Box margin="auto" maxWidth="42rem" px={6}>
       {posts.map((post) => (
         <NextLink key={post.slug} href={`/blog/${post.slug}`} passHref>
           <Link>
             <Heading as="h3">{post.title}</Heading>
-            <Text>{post.content}</Text>
+            <Text>{post.date}</Text>
+            <Text>{post.description}</Text>
           </Link>
         </NextLink>
       ))}
-    </React.Fragment>
+    </Box>
   );
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const postsDirectory = path.join(process.cwd(), 'src', 'blog');
-  const filenames = fs.readdirSync(postsDirectory);
+  const posts = blogPosts.map(
+    (blogPost: { [key: string]: string }): BlogProps['posts'][0] => {
+      // First step is to go through all the posts and check that they are well formatted
+      if (!blogPost.title) {
+        throw new Error(`Title required for ${blogPost.__resourcePath}`);
+      }
+      if (!blogPost.date) {
+        throw new Error(`Date required for ${blogPost.__resourcePath}`);
+      }
+      if (!blogPost.description) {
+        throw new Error(`Date required for ${blogPost.__resourcePath}`);
+      }
 
-  const posts = filenames.map((filename) => {
-    // const filePath = path.join(postsDirectory, filename, 'index.md');
-    // const fileContents = fs.readFileSync(filePath, 'utf8');
-
-    // Generally you would parse/transform the contents
-    // For example you can transform markdown to HTML here
-
-    return {
-      slug: filename,
-      title: 'TODO',
-      content: 'TODO',
-    };
-  });
+      const slug = blogPost.__resourcePath.split('/');
+      return {
+        slug: slug[slug.length - 2],
+        date: format(new Date(blogPost.date), 'MMMM d, yyyy'),
+        title: blogPost.title,
+        description: blogPost.description,
+      };
+    }
+  );
 
   return {
     props: {
