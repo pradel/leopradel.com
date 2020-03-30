@@ -27,6 +27,7 @@
     "babel-plugin-import-glob-array": "0.2.0",
     "next-mdx-enhanced": "2.4.0",
     "prettier": "2.0.2",
+    "reading-time": "1.2.0",
     "typescript": "3.8.3"
   },
   "prettier": {

@@ -11,6 +11,7 @@ interface BlogProps {
     slug: string;
     date: string;
     title: string;
+    readingTime: string;
     description: string;
   }[];
 }
@@ -22,7 +23,9 @@ const Blog = ({ posts }: BlogProps) => {
         <NextLink key={post.slug} href={`/blog/${post.slug}`} passHref>
           <Link>
             <Heading as="h3">{post.title}</Heading>
-            <Text>{post.date}</Text>
+            <Text fontSize="sm">
+              {post.date} • {post.readingTime}
+            </Text>
             <Text>{post.description}</Text>
           </Link>
         </NextLink>
@@ -33,7 +36,7 @@ const Blog = ({ posts }: BlogProps) => {
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
   const posts = blogPosts.map(
-    (blogPost: { [key: string]: string }): BlogProps['posts'][0] => {
+    (blogPost: { [key: string]: any }): BlogProps['posts'][0] => {
       // First step is to go through all the posts and check that they are well formatted
       if (!blogPost.title) {
         throw new Error(`Title required for ${blogPost.__resourcePath}`);
@@ -51,6 +54,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
         date: format(new Date(blogPost.date), 'MMMM d, yyyy'),
         title: blogPost.title,
         description: blogPost.description,
+        readingTime: blogPost.readingTime.text,
       };
     }
   );
