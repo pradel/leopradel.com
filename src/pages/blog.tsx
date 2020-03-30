@@ -18,17 +18,26 @@ interface BlogProps {
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <Box margin="auto" maxWidth="42rem" px={6}>
+    <Box margin="auto" maxWidth="42rem" px={6} as="main">
       {posts.map((post) => (
-        <NextLink key={post.slug} href={`/blog/${post.slug}`} passHref>
-          <Link>
-            <Heading as="h3">{post.title}</Heading>
-            <Text fontSize="sm">
+        <Box key={post.slug} mt={8} as="article">
+          <header>
+            <Heading as="h3" size="lg" mb={1}>
+              <NextLink href={`/blog/${post.slug}`} passHref>
+                <Link
+                  _hover={{ textDecoration: 'none' }}
+                  style={{ color: '#FD4659' }}
+                >
+                  {post.title}
+                </Link>
+              </NextLink>
+            </Heading>
+            <Text fontSize="xs" color="gray.500" as="small">
               {post.date} • {post.readingTime}
             </Text>
-            <Text>{post.description}</Text>
-          </Link>
-        </NextLink>
+          </header>
+          <Text>{post.description}</Text>
+        </Box>
       ))}
     </Box>
   );
@@ -58,6 +67,8 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
       };
     }
   );
+
+  // TODO sort by date
 
   return {
     props: {
