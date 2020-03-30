@@ -1,25 +1,28 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import NextLink from 'next/link';
 import { Box, Link, Heading, Text } from '@chakra-ui/core';
 import { format } from 'date-fns';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
+import { markdownToHtml } from '../../lib/markdownToHtml';
 
 interface BlogPostProps {
   post: {
     title: string;
     date: string;
     readingTime: string;
+    content: string;
   };
 }
 
 const BlogPost = ({ post }: BlogPostProps) => {
+  // TODO SEO
+
   return (
     <Box margin="auto" maxWidth="42rem" px={6} as="main">
-      Yo
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </Box>
   );
 };
@@ -40,6 +43,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
     date: format(new Date(data.date), 'MMMM d, yyyy'),
     title: data.title,
     readingTime: readingTime(content).text,
+    content: await markdownToHtml(content),
   };
 
   return {
