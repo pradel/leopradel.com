@@ -4,6 +4,9 @@ import '../styles/index.css';
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 
+// TODO default SEO
+// TODO add fathom
+
 const App = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;
 };
