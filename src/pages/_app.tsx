@@ -6,6 +6,8 @@ import {
   ColorModeProvider,
   theme,
 } from '@chakra-ui/core';
+import 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
