@@ -4,7 +4,6 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-
 /* https://github.com/tailwindcss/discuss/issues/243#issuecomment-481175230 */
 .markdown {
   @apply text-lg text-gray-800 leading-normal;
@@ -17,7 +16,7 @@
     @apply text-black font-bold;
   }
   & a {
-    @apply text-pink-400 font-semibold border-b border-pink-400;
+    @apply text-watermelon font-semibold border-b border-watermelon;
   }
   & strong a {
     @apply font-bold;
@@ -40,12 +39,11 @@
   & blockquote {
     @apply border-l-4 border-gray-400 pl-4 italic;
   }
-  & ul,
+  & ul {
+    @apply list-disc;
+  }
   & ol {
-    @apply pl-5;
-    @screen sm {
-      @apply pl-10;
-    }
+    @apply list-decimal;
   }
   /* gatsby header anchor */
   & .anchor {

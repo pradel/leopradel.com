@@ -23,9 +23,9 @@ const Blog = ({ posts }: BlogProps) => {
       {posts.map((post) => (
         <article key={post.slug} className="mb-12">
           <header>
-            <h3 className="leading-tight text-3xl font-bold text-black">
+            <h3 className="leading-tight text-3xl font-bold">
               <NextLink href={`/blog/${post.slug}`} passHref>
-                <a>{post.title}</a>
+                <a className="text-watermelon">{post.title}</a>
               </NextLink>
             </h3>
             <p className="text-sm mt-0 mb-2 text-gray-600">
