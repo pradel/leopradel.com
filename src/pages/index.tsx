@@ -5,7 +5,9 @@ const Home = () => (
   <React.Fragment>
     <Header />
 
-    <h1>Hello world!</h1>
+    <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+      Latest Posts
+    </main>
   </React.Fragment>
 );
 
