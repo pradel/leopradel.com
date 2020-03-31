@@ -1,6 +1,6 @@
 [build]
   base    = "."
-  publish = "public"
+  publish = ".next/static"
   command = "yarn build"
 
 [build.environment]
