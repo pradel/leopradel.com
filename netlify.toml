@@ -1,6 +1,6 @@
 [build]
   base    = "."
-  publish = ".next/static"
+  publish = "out"
   command = "yarn build && yarn next export"
 
 [build.environment]
