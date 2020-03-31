@@ -19,7 +19,7 @@ export const Header = () => {
             </a>
           </NextLink>
         </li>
-        <li className="mr-3">
+        <li>
           <NextLink href="/projects" passHref>
             <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-1 px-3">
               Projects

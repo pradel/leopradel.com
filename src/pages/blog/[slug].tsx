@@ -7,6 +7,7 @@ import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { markdownToHtml } from '../../lib/markdownToHtml';
 import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 interface BlogPostProps {
   post: {
@@ -41,6 +42,8 @@ const BlogPost = ({ post }: BlogPostProps) => {
           />
         </article>
       </main>
+
+      <Footer />
     </React.Fragment>
   );
 };

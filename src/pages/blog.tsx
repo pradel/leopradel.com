@@ -6,6 +6,7 @@ import { join } from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { BlogPostPreview } from '../components/BlogPostPreview';
 
 interface BlogProps {
@@ -28,6 +29,8 @@ const Blog = ({ posts }: BlogProps) => {
           <BlogPostPreview key={post.slug} post={post} />
         ))}
       </main>
+
+      <Footer />
     </React.Fragment>
   );
 };
