@@ -1,7 +1,7 @@
 [build]
   base    = "."
   publish = ".next/static"
-  command = "yarn build"
+  command = "yarn build && yarn next export"
 
 [build.environment]
   NODE_VERSION = "12"
