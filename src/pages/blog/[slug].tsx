@@ -6,6 +6,7 @@ import { join } from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { markdownToHtml } from '../../lib/markdownToHtml';
+import { Header } from '../../components/Header';
 
 interface BlogPostProps {
   post: {
@@ -20,23 +21,27 @@ const BlogPost = ({ post }: BlogPostProps) => {
   // TODO SEO
 
   return (
-    <div className="mx-auto max-w-3xl px-6 xl:px-12 mt-16 mb-4">
-      <article>
-        <header>
-          <h1 className="leading-tight text-3xl font-bold text-black">
-            {post.title}
-          </h1>
-          <p className="text-sm mt-0 mb-4 text-gray-600">
-            {post.date} • {post.readingTime}
-          </p>
-        </header>
-        <hr className="my-8 border-b-2 border-gray-200" />
-        <section
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-      </article>
-    </div>
+    <React.Fragment>
+      <Header />
+
+      <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
+        <article>
+          <header>
+            <h1 className="leading-tight text-3xl font-bold text-black">
+              {post.title}
+            </h1>
+            <p className="text-sm mt-0 mb-4 text-gray-600">
+              {post.date} • {post.readingTime}
+            </p>
+          </header>
+          <hr className="my-8 border-b-2 border-gray-200" />
+          <section
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        </article>
+      </main>
+    </React.Fragment>
   );
 };
 

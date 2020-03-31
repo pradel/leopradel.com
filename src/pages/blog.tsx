@@ -6,6 +6,7 @@ import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
+import { Header } from '../components/Header';
 
 interface BlogProps {
   posts: {
@@ -19,25 +20,29 @@ interface BlogProps {
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
-      {posts.map((post) => (
-        <article key={post.slug} className="mb-12">
-          <header>
-            <h3 className="leading-tight text-3xl font-bold">
-              <NextLink href={`/blog/${post.slug}`} passHref>
-                <a className="text-watermelon">{post.title}</a>
-              </NextLink>
-            </h3>
-            <p className="text-sm mt-0 mb-2 text-gray-600">
-              {post.date} • {post.readingTime}
-            </p>
-          </header>
-          <section>
-            <p>{post.description}</p>
-          </section>
-        </article>
-      ))}
-    </main>
+    <React.Fragment>
+      <Header />
+
+      <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+        {posts.map((post) => (
+          <article key={post.slug} className="mb-12">
+            <header>
+              <h3 className="leading-tight text-3xl font-bold">
+                <NextLink href={`/blog/${post.slug}`} passHref>
+                  <a className="text-watermelon">{post.title}</a>
+                </NextLink>
+              </h3>
+              <p className="text-sm mt-0 mb-2 text-gray-600">
+                {post.date} • {post.readingTime}
+              </p>
+            </header>
+            <section>
+              <p className="text-black">{post.description}</p>
+            </section>
+          </article>
+        ))}
+      </main>
+    </React.Fragment>
   );
 };
 
