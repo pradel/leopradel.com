@@ -1,9 +1,8 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import '../styles/index.css';
-// TODO see if prismjs can be used only server side
-import 'prismjs';
+// TODO move this to the blog post page once next.js support css imports in files
 import 'prismjs/themes/prism-okaidia.css';
+import '../styles/index.css';
 
 // TODO default SEO
 // TODO add fathom

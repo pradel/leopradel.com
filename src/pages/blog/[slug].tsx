@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { format } from 'date-fns';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
+// TODO see if prismjs can be used only server side
+import Prism from 'prismjs';
 import { markdownToHtml } from '../../lib/markdownToHtml';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
@@ -19,6 +21,10 @@ interface BlogPostProps {
 }
 
 const BlogPost = ({ post }: BlogPostProps) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   // TODO SEO
 
   return (
