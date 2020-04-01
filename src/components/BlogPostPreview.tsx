@@ -13,9 +13,9 @@ interface BlogPostPreviewProps {
 
 export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
   return (
-    <article key={post.slug} className="mb-12">
+    <article key={post.slug} className="mb-10">
       <header>
-        <h3 className="leading-tight text-3xl font-bold">
+        <h3 className="leading-tight text-2xl font-bold">
           <NextLink href={`/blog/${post.slug}`} passHref>
             <a className="text-watermelon">{post.title}</a>
           </NextLink>
