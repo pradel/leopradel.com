@@ -3,8 +3,9 @@ import html from 'remark-html';
 import slug from 'remark-slug';
 import autolinkHeadings from 'remark-autolink-headings';
 import highlight from 'remark-highlight.js';
-var low = require('lowlight/lib/core');
 
+// https://github.com/highlightjs/highlight.js/issues/1471
+var low = require('lowlight/lib/core');
 low.registerLanguage('graphql', function (e: any) {
   return {
     aliases: ['gql'],
