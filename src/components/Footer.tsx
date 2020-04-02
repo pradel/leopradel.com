@@ -8,22 +8,22 @@ export const Footer = () => {
         <li className="mr-3">
           <a
             className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
-            href={config.githubUrl}
+            href={config.twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
             dangerouslySetInnerHTML={{
-              __html: require('../icons/github.svg?include'),
+              __html: require('../icons/twitter.svg?include'),
             }}
           />
         </li>
         <li className="mr-3">
           <a
             className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
-            href={config.twitterUrl}
+            href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             dangerouslySetInnerHTML={{
-              __html: require('../icons/twitter.svg?include'),
+              __html: require('../icons/github.svg?include'),
             }}
           />
         </li>
