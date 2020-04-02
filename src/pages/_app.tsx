@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import * as Fathom from 'fathom-client';
-// TODO move this to the blog post page once next.js support css imports in files
-import 'highlight.js/styles/kimbie.light.css';
 import 'typeface-quicksand';
+// highlight.js theme
+import '../styles/kimbie.light.css';
 import '../styles/index.css';
 import { config } from '../config';
 
