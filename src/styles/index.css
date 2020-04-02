@@ -37,7 +37,7 @@
     @apply block p-4 rounded;
   }
   & pre code[class*='language-'] {
-    @apply p-0 text-sm;
+    @apply p-4 text-sm;
   }
   & blockquote {
     @apply border-l-4 border-gray-400 pl-4 italic;
