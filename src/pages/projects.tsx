@@ -107,10 +107,45 @@ const Projects = () => (
         />
         <Project
           project={{
+            title: 'octon',
+            description:
+              'Notifies you when there is a new release on repos you starred on Github.',
+            githubUrl: 'https://github.com/pradel/octon',
+            websiteUrl: 'https://github.com/pradel/octon',
+          }}
+        />
+        <Project
+          project={{
             title: 'react-responsive-modal',
             description: 'Simple responsive react modal.',
             githubUrl: 'https://github.com/pradel/react-responsive-modal',
             websiteUrl: 'https://react-responsive-modal.leopradel.com/',
+          }}
+        />
+        <Project
+          project={{
+            title: 'gitlab-ci-validate',
+            description: 'Checks if your .gitlab-ci.yml file is valid.',
+            githubUrl: 'https://github.com/pradel/gitlab-ci-validate',
+            websiteUrl: 'https://github.com/pradel/gitlab-ci-validate',
+          }}
+        />
+        <Project
+          project={{
+            title: 'craco-blockstack',
+            description:
+              'A craco plugin to use Blockstack with create-react-app.',
+            githubUrl: 'https://github.com/pradel/craco-blockstack',
+            websiteUrl: 'https://github.com/pradel/craco-blockstack',
+          }}
+        />
+        <Project
+          project={{
+            title: 'react-google-photo',
+            description:
+              'React lightbox component using the google photo style.',
+            githubUrl: 'https://github.com/pradel/react-google-photo',
+            websiteUrl: 'https://react-google-photo.leopradel.com/',
           }}
         />
       </section>
