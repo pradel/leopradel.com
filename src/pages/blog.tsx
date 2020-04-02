@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { BlogPostPreview } from '../components/BlogPostPreview';
@@ -15,9 +16,21 @@ interface BlogProps {
   }[];
 }
 
+const title = 'Blog - Leo Pradel';
+const url = 'https://leopradel.com/blog';
+
 const Blog = ({ posts }: BlogProps) => {
   return (
     <React.Fragment>
+      <NextSeo
+        title={title}
+        canonical={url}
+        openGraph={{
+          url,
+          title,
+        }}
+      />
+
       <Header />
 
       <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">

@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import { NextSeo } from 'next-seo';
 import { format } from 'date-fns';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -12,6 +13,8 @@ import { Footer } from '../../components/Footer';
 interface BlogPostProps {
   post: {
     title: string;
+    slug: string;
+    description: string;
     date: string;
     readingTime: string;
     content: string;
@@ -19,10 +22,26 @@ interface BlogPostProps {
 }
 
 const BlogPost = ({ post }: BlogPostProps) => {
-  // TODO SEO
+  const title = `${post.title} - Leo Pradel`;
+  const url = `https://leopradel.com/blog/${post.slug}`;
 
   return (
     <React.Fragment>
+      <NextSeo
+        title={title}
+        description={post.description}
+        canonical={url}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: post.date,
+          },
+          url,
+          title,
+          description: post.description,
+        }}
+      />
+
       <Header />
 
       <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
@@ -61,8 +80,10 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   const { data, content } = matter(fileContents);
 
   const post = {
+    slug,
     date: format(new Date(data.date), 'MMMM d, yyyy'),
     title: data.title,
+    description: data.description,
     readingTime: readingTime(content).text,
     content: await markdownToHtml(content),
   };
