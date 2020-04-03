@@ -9,8 +9,6 @@ import '../styles/kimbie.light.css';
 import '../styles/index.css';
 import { config } from '../config';
 
-// TODO default SEO
-
 // Record a pageview when route changes
 Router.events.on('routeChangeComplete', () => {
   Fathom.trackPageview();
