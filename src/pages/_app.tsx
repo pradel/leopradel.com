@@ -5,7 +5,7 @@ import * as Fathom from 'fathom-client';
 import { DefaultSeo } from 'next-seo';
 import 'typeface-quicksand';
 // highlight.js theme
-import '../styles/kimbie.light.css';
+import '../styles/atom-one-light.css';
 import '../styles/index.css';
 import { config } from '../config';
 
