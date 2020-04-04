@@ -1,9 +1,9 @@
 [build]
   base    = "."
-  publish = "public"
-  command = "yarn build"
+  publish = "out"
+  command = "yarn build && yarn next export"
 
 [build.environment]
   NODE_VERSION = "12"
-  YARN_VERSION = "1.17.3"
+  YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--pure-lockfile"
