@@ -4,7 +4,7 @@ date: '04/06/2020'
 description: '🎉 Releasing version 5 of react-responsive-modal'
 ---
 
-The last release of react-responsive-modal ([v4.0.1](https://github.com/pradel/react-responsive-modal/releases/tag/v4.0.1)) was almost a year ago, so I finally decided to take some time and update the repository. I always found that the entry cost of importing the lib was too big, so I really focused this release on this part.
+The last release of react-responsive-modal ([v4.0.1](https://github.com/pradel/react-responsive-modal/releases/tag/v4.0.1)) was almost a year ago, so I finally decided to take some time and update [the repository](https://github.com/pradel/react-responsive-modal). I always found that the entry cost of importing the lib was too big, so I really focused this release on this part.
 
 Please open an issue on [github](https://github.com/pradel/react-responsive-modal/issues) if you have any problems with the new version.
 
