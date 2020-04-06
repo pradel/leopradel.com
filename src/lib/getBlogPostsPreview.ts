@@ -41,7 +41,8 @@ export const getBlogPostsPreview = (): BlogPostPreview[] => {
     };
   });
 
-  // TODO sort by date
+  // @ts-ignore
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return posts;
 };
