@@ -4,7 +4,7 @@ import { join } from 'path';
 
 const generateSitemap = async () => {
   const postsDirectory = join(process.cwd(), 'src', 'blog');
-  const publicDirectory = join(process.cwd(), 'src', 'public');
+  const publicDirectory = join(process.cwd(), 'public');
   const folderNames = readdirSync(postsDirectory);
 
   const smStream = new SitemapStream({

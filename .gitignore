@@ -1,4 +1,4 @@
 *.log
 node_modules/
 .next/
-src/public/sitemap.xml
+public/sitemap.xml
