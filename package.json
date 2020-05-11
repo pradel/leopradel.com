@@ -5,8 +5,9 @@
   "author": "Pradel Léo <pradel.leo@gmail.com>",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "yarn generate:sitemap && next build",
     "start": "next start",
+    "generate:sitemap": "yarn ts-node --skip-project scripts/generateSitemap.ts",
     "prettier": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "prettier": {
@@ -43,6 +44,7 @@
     "responsive-loader": "1.2.0",
     "sharp": "0.25.2",
     "tailwindcss": "1.4.6",
+    "ts-node": "8.10.1",
     "typeface-quicksand": "1.1.4",
     "typescript": "3.8.3"
   }

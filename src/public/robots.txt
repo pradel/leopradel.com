@@ -1,4 +1,4 @@
-Sitemap: https://www.leopradel.com/api/sitemap.xml
+Sitemap: https://www.leopradel.com/sitemap.xml
 
 User-agent: *
 Allow: /*
