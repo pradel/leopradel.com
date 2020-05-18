@@ -147,11 +147,11 @@ const accountsServer = new AccountsServer(
 Then, we add the accounts-js graphql dependencies.
 
 ```
-npm install @accounts/graphql-api graphql-toolkit @graphql-modules/core
+npm install @accounts/graphql-api @graphql-toolkit/schema-merging @graphql-modules/core
 ```
 
 - `@accounts/graphql-api`: The transport layer exposing all the queries and mutations accounts-js provide.
-- `graphql-toolkit`: Expose a set of tools that will help us to merge our schemas.
+- `@graphql-toolkit/schema-merging`: Expose a set of tools that will help us to merge our schemas.
 - `@graphql-modules/core`: An internal dependency that accounts-js use to manage his graphql schema and resolvers.
 
 Let's merge the accounts-js GraphQL schema and our schema, so the user can access it
@@ -161,7 +161,7 @@ Let's merge the accounts-js GraphQL schema and our schema, so the user can acces
 
 // Add makeExecutableSchema to the imported variables
 const { ApolloServer, gql, makeExecutableSchema } = require('apollo-server');
-const { mergeTypeDefs, mergeResolvers } = require('graphql-toolkit');
+const { mergeTypeDefs, mergeResolvers } = require('@graphql-toolkit/schema-merging');
 const { AccountsModule } = require('@accounts/graphql-api');
 
 // We generate the accounts-js GraphQL module
@@ -191,7 +191,7 @@ At the end, our file should look like this:
 const { ApolloServer, gql, makeExecutableSchema } = require('apollo-server');
 const mongoose = require('mongoose');
 const { Mongo } = require('@accounts/mongo');
-const { mergeTypeDefs, mergeResolvers } = require('graphql-toolkit');
+const { mergeTypeDefs, mergeResolvers } = require('@graphql-toolkit/schema-merging');
 const { AccountsServer } = require('@accounts/server');
 const { AccountsPassword } = require('@accounts/password');
 const { AccountsModule } = require('@accounts/graphql-api');
