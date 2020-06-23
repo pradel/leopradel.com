@@ -17,8 +17,7 @@ Router.events.on('routeChangeComplete', () => {
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      Fathom.load();
-      Fathom.setSiteId(config.fathomSiteId);
+      Fathom.load(config.fathomSiteId);
       Fathom.trackPageview();
     }
   }, []);
