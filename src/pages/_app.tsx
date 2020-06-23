@@ -39,6 +39,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           site: '@leopradel',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          {
+            name: 'monetization',
+            content: '$ilp.uphold.com/W3NakGUezfKy',
+          },
+        ]}
       />
       <Component {...pageProps} />
     </React.Fragment>
