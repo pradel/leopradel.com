@@ -1,5 +1,11 @@
 module.exports = {
-  purge: ['./src/**/*.tsx'],
+  future: {
+    // Remove once v2 is released
+    purgeLayersByDefault: true,
+    // Remove once v2 is released
+    removeDeprecatedGapUtilities: true,
+  },
+  purge: ['./src/**/*.tsx', './src/icons/**/*.svg'],
   theme: {
     extend: {
       colors: {

@@ -161,7 +161,10 @@ Let's merge the accounts-js GraphQL schema and our schema, so the user can acces
 
 // Add makeExecutableSchema to the imported variables
 const { ApolloServer, gql, makeExecutableSchema } = require('apollo-server');
-const { mergeTypeDefs, mergeResolvers } = require('@graphql-toolkit/schema-merging');
+const {
+  mergeTypeDefs,
+  mergeResolvers,
+} = require('@graphql-toolkit/schema-merging');
 const { AccountsModule } = require('@accounts/graphql-api');
 
 // We generate the accounts-js GraphQL module
@@ -191,7 +194,10 @@ At the end, our file should look like this:
 const { ApolloServer, gql, makeExecutableSchema } = require('apollo-server');
 const mongoose = require('mongoose');
 const { Mongo } = require('@accounts/mongo');
-const { mergeTypeDefs, mergeResolvers } = require('@graphql-toolkit/schema-merging');
+const {
+  mergeTypeDefs,
+  mergeResolvers,
+} = require('@graphql-toolkit/schema-merging');
 const { AccountsServer } = require('@accounts/server');
 const { AccountsPassword } = require('@accounts/password');
 const { AccountsModule } = require('@accounts/graphql-api');
