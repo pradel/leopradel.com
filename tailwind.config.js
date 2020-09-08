@@ -5,7 +5,7 @@ module.exports = {
     // Remove once v2 is released
     removeDeprecatedGapUtilities: true,
   },
-  purge: ['./src/**/*.tsx'],
+  purge: ['./src/**/*.tsx', './src/icons/**/*.svg'],
   theme: {
     extend: {
       colors: {
