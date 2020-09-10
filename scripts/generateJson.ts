@@ -23,6 +23,7 @@ const generateJson = async () => {
       slug: dirent.name,
       date: format(new Date(data.date), 'MMMM d, yyyy'),
       title: data.title,
+      description: data.description,
     };
   });
 

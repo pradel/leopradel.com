@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
+import Head from 'next/head';
 import * as Fathom from 'fathom-client';
 import { DefaultSeo } from 'next-seo';
 import 'typeface-quicksand';
@@ -24,10 +25,35 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
+      <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS Feed for leopradel.com"
+          href="/feed/"
+        />
+      </Head>
       <DefaultSeo
         openGraph={{
           type: 'website',
-          url: 'https://leopradel.com/',
+          url: 'https://www.leopradel.com/',
           site_name: 'leopradel',
           title: 'Leo Pradel',
           description:
