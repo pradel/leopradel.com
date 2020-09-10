@@ -9,7 +9,7 @@ const nextConfig = {
         destination: '/api/sitemap',
       },
       {
-        source: '/rss',
+        source: '/feed',
         destination: '/api/rss',
       },
     ];
