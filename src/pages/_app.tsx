@@ -27,7 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo
         openGraph={{
           type: 'website',
-          url: 'https://leopradel.com/',
+          url: 'https://www.leopradel.com/',
           site_name: 'leopradel',
           title: 'Leo Pradel',
           description:
