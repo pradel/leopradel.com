@@ -5,60 +5,24 @@
 @tailwind utilities;
 
 /* purgecss start ignore */
-/* https://github.com/tailwindcss/discuss/issues/243#issuecomment-481175230 */
-.markdown {
-  @apply text-lg text-gray-800 leading-normal;
-  & > * + *,
-  & li + li,
-  & li > p + p {
-    @apply mt-6;
-  }
-  & strong {
-    @apply text-black font-bold;
-  }
-  & a {
-    @apply text-watermelon font-semibold border-b border-watermelon;
-  }
-  & strong a {
-    @apply font-bold;
-  }
-  & h1 {
-    @apply leading-tight text-2xl font-bold text-black mb-2 mt-10;
-  }
-  & h2 {
-    @apply leading-tight text-xl font-bold text-black mb-2 mt-10;
-  }
-  & h3 {
-    @apply leading-tight text-lg font-bold text-black mt-8 -mb-2;
-  }
-  & code {
-    @apply font-mono text-sm inline bg-gray-200 px-1;
-  }
-  & pre code {
-    @apply block p-4 rounded;
-  }
-  & pre code[class*='language-'] {
-    @apply p-4 text-sm;
-  }
-  & blockquote {
-    @apply border-l-4 border-gray-400 pl-4 italic;
-  }
-  & ul {
-    @apply list-disc;
-  }
-  & ol {
-    @apply list-decimal;
-  }
-  /* gatsby header anchor */
-  & .anchor {
-    @apply border-none mt-1;
-  }
-  & .anchor svg {
-    @apply fill-current;
-  }
-}
-
 body {
   font-family: 'Quicksand', sans-serif;
 }
+
+/* customise typography plugin */
+.prose {
+  & pre {
+    @apply bg-gray-200;
+  }
+  & code {
+    @apply bg-gray-200 font-normal;
+  }
+  & pre code {
+    @apply text-sm text-gray-700;
+  }
+  & a {
+    @apply text-watermelon font-semibold no-underline border-b border-watermelon;
+  }
+}
+
 /* purgecss end ignore */
