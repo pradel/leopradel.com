@@ -19,10 +19,6 @@ const rss: NextApiHandler = async (_, res) => {
     // image: 'http://example.com/image.png',
     // favicon: 'http://example.com/favicon.ico',
     copyright: `All rights reserved ${new Date().getFullYear()}, Leo Pradel`,
-    // feedLinks: {
-    //   json: 'https://example.com/json',
-    //   atom: 'https://example.com/atom',
-    // },
     author,
   });
 
