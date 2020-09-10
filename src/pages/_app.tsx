@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
+import Head from 'next/head';
 import * as Fathom from 'fathom-client';
 import { DefaultSeo } from 'next-seo';
 import 'typeface-quicksand';
@@ -8,7 +9,6 @@ import 'typeface-quicksand';
 import '../styles/atom-one-light.css';
 import '../styles/index.css';
 import { config } from '../config';
-import Head from 'next/head';
 
 // Record a pageview when route changes
 Router.events.on('routeChangeComplete', () => {
