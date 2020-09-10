@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "author": "Pradel Léo <pradel.leo@gmail.com>",
   "scripts": {
-    "dev": "next",
-    "build": "yarn generate:sitemap && next build",
+    "dev": "yarn generate:json && next",
+    "build": "yarn generate:json && next build",
     "start": "next start",
-    "generate:sitemap": "yarn ts-node --skip-project scripts/generateSitemap.ts",
+    "generate:json": "yarn ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
     "prettier": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "prettier": {

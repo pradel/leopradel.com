@@ -97,12 +97,14 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const postsDirectory = join(process.cwd(), 'src', 'blog');
-  const folderNames = readdirSync(postsDirectory);
+  const folderNames = readdirSync(postsDirectory, {
+    withFileTypes: true,
+  }).filter((dirent) => dirent.isDirectory());
 
   return {
-    paths: folderNames.map((folderName) => ({
+    paths: folderNames.map((dirent) => ({
       params: {
-        slug: folderName,
+        slug: dirent.name,
       },
     })),
     fallback: false,

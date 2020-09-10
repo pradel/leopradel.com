@@ -14,10 +14,12 @@ export interface BlogPostPreview {
 
 export const getBlogPostsPreview = (): BlogPostPreview[] => {
   const postsDirectory = join(process.cwd(), 'src', 'blog');
-  const folderNames = readdirSync(postsDirectory);
+  const folderNames = readdirSync(postsDirectory, {
+    withFileTypes: true,
+  }).filter((dirent) => dirent.isDirectory());
 
-  const posts = folderNames.map((folderName) => {
-    const fullPath = join(postsDirectory, folderName, 'index.md');
+  const posts = folderNames.map((dirent) => {
+    const fullPath = join(postsDirectory, dirent.name, 'index.md');
     const fileContents = readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
@@ -33,7 +35,7 @@ export const getBlogPostsPreview = (): BlogPostPreview[] => {
     }
 
     return {
-      slug: folderName,
+      slug: dirent.name,
       date: format(new Date(data.date), 'MMMM d, yyyy'),
       title: data.title,
       description: data.description,

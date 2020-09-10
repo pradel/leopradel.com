@@ -1,4 +1,4 @@
 *.log
 node_modules/
 .next/
-public/sitemap.xml
+src/blog/posts.json
