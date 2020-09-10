@@ -8,6 +8,7 @@ import 'typeface-quicksand';
 import '../styles/atom-one-light.css';
 import '../styles/index.css';
 import { config } from '../config';
+import Head from 'next/head';
 
 // Record a pageview when route changes
 Router.events.on('routeChangeComplete', () => {
@@ -24,6 +25,25 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <React.Fragment>
+      <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+      </Head>
       <DefaultSeo
         openGraph={{
           type: 'website',
