@@ -17,7 +17,7 @@ const rss: NextApiHandler = async (_, res) => {
     link: websiteUrl,
     language: 'en',
     // image: 'http://example.com/image.png',
-    // favicon: 'http://example.com/favicon.ico',
+    favicon: 'http://leopradel-git-feature-rss.leopradel.vercel.app/apple-touch-icon.png',
     copyright: `All rights reserved ${new Date().getFullYear()}, Leo Pradel`,
     author,
   });
