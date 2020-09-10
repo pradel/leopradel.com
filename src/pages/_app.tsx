@@ -43,6 +43,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS Feed for leopradel.com"
+          href="/feed/"
+        />
       </Head>
       <DefaultSeo
         openGraph={{
