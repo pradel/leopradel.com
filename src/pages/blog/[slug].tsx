@@ -56,7 +56,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
           </header>
           <hr className="my-8 border-b-2 border-gray-200" />
           <section
-            className="markdown"
+            className="prose lg:prose-lg"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

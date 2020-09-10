@@ -61,4 +61,21 @@
 body {
   font-family: 'Quicksand', sans-serif;
 }
+
+/* customise typography plugin */
+.prose {
+  & pre {
+    @apply bg-gray-200;
+  }
+  & code {
+    @apply bg-gray-200 font-normal;
+  }
+  & pre code {
+    @apply text-sm text-gray-700;
+  }
+  & a {
+    @apply text-watermelon font-semibold no-underline border-b border-watermelon;
+  }
+}
+
 /* purgecss end ignore */
