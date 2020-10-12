@@ -10,6 +10,7 @@ body {
 }
 
 /* customise typography plugin */
+/* TODO migrate to tailwind config js file */
 .prose {
   & pre {
     @apply bg-gray-200;
