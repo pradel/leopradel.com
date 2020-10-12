@@ -4,7 +4,7 @@ date: '10/12/2020'
 description: 'Get faster build / tests for your create-react-app'
 ---
 
-We can see a trend to replace the current javascript tooling with faster tools written in go / rust. In this post I decided to try [esbuild](https://github.com/evanw/esbuild) and [swc](https://swc.rs/) to see what performance improvement we can get in any application using create-react-app.
+We can see a trend of replacing the current javascript tooling with faster tools written in go / rust. In this post I decided to try [esbuild](https://github.com/evanw/esbuild) and [swc](https://swc.rs/) to see what performance improvement we can get in any application using create-react-app.
 
 Internally create-react-app uses webpack to create a bundle for our application. In your code you use some ECMAScript features that are not yet available in all browsers (eg: async / await). Babel is used to compile the javascript / typescript files of your application in a backwards compatible version of javascript, meaning it can be used in older browser versions. We can speed up this process by internally **replacing babel with esbuild / swc** which are faster alternatives.
 
@@ -22,7 +22,7 @@ _While these tools are focused on the create-react-app tooling, you can take a l
 
 #### Esbuild
 
-[esbuild](https://github.com/evanw/esbuild) is a super-fast javascript/typescript bundler and minifier written in Go. `esbuild` also provide a javascript minifier to replace [terser](https://github.com/terser/terser).
+[esbuild](https://github.com/evanw/esbuild) is a super-fast javascript/typescript bundler and minifier written in Go. `esbuild` also provides a javascript minifier to replace [terser](https://github.com/terser/terser).
 
 #### Swc
 
