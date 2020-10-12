@@ -8,7 +8,7 @@ We can see a trend of replacing the current javascript tooling with faster tools
 
 Internally create-react-app uses webpack to create a bundle for our application. In your code you use some ECMAScript features that are not yet available in all browsers (eg: async / await). Babel is used to compile the javascript / typescript files of your application in a backwards compatible version of javascript, meaning it can be used in older browser versions. We can speed up this process by internally **replacing babel with esbuild / swc** which are faster alternatives.
 
-As your app is growing, the development environment and compilation is getting slower and slower, you can easily reach 10+ mins for the build time 🐢. To improve your build time and ship your code faster to production you might be interested in using these tools and get:
+As your app is growing, the development environment and compilation is getting slower and slower, it can easily reach 10+ mins for the build time 🐢. To improve build time and ship code faster to production you might be interested in using these tools and get:
 
 - Faster loading time in development
 - Faster build time
