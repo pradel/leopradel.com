@@ -28,7 +28,11 @@ _While these tools are focused on the create-react-app tooling, you can take a l
 
 [swc](https://swc.rs/) is a super-fast javascript/typescript compiler written in Rust. In the future you will be able to use swc to check your typescript files. swc is also creating their own webpack alternative called [spack](https://swc.rs/docs/usage-spack-cli).
 
-## Benchmark
+### How is it working?
+
+When you start a build, we replace the `babel-loader` with `esbuild-loader` / `swc-loader` and the code that needs to be processed is sent to the native (go or rust) binary instead of babel.
+
+### Benchmark
 
 I added both approaches to one of my typescript application to see what are the results.
 
@@ -41,7 +45,7 @@ esbuild is currently faster than swc as it also includes a minifier, so we can r
 
 If you are trying this on a bigger project I would love to know the results you get!
 
-📚 Ready to improve the workflow of your app in 2 minutes?
+### 📚 Ready to improve the workflow of your app in 2 minutes?
 
 - Follow the [installation guide](https://github.com/pradel/create-react-app-esbuild/tree/main/packages/craco-esbuild) to add `craco-esbuild`.
 - Follow the [installation guide](https://github.com/pradel/create-react-app-swc/tree/main/packages/craco-swc) to add `craco-swc`.
