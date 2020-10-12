@@ -4,25 +4,28 @@ date: '10/12/2020'
 description: 'Get faster build / tests for your create-react-app'
 ---
 
-We can see a trend to replace the current javascript tooling with faster tools written in go / rust. In this post I decided to try [esbuild](https://github.com/evanw/esbuild) and [swc](https://swc.rs/) to see what performance improvement we can GET in any application using create-react-app.
+We can see a trend to replace the current javascript tooling with faster tools written in go / rust. In this post I decided to try [esbuild](https://github.com/evanw/esbuild) and [swc](https://swc.rs/) to see what performance improvement we can get in any application using create-react-app.
+
+Internally create-react-app uses webpack to create a bundle for our application. In your code you use some ECMAScript features that are not yet available in all browsers (eg: async / await). Babel is used to compile the javascript / typescript files of your application in a backwards compatible version of javascript, meaning it can be used in older browser versions. We can speed up this process by internally **replacing babel with esbuild / swc** which are faster alternatives.
+
+As your app is growing, the development environment and compilation is getting slower and slower, you can easily reach 10+ mins for the build time 🐢. To improve your build time and ship your code faster to production you might be interested in using these tools and get:
+
+- Faster loading time in development
+- Faster build time
+- Faster tests
 
 While writing this post I created 2 projects [create-react-app-swc](https://github.com/pradel/create-react-app-swc) and [create-react-app-esbuild](https://github.com/pradel/create-react-app-esbuild)
 to help you integrate either swc or esbuild easily in your application.
 
 ### What are these tools and why are they faster?
 
-- [esbuild](https://github.com/evanw/esbuild) is a super-fast javascript/typescript bundler and minifier written in Go.
-- [swc](https://swc.rs/) is a super-fast javascript/typescript compiler written in Rust.
+#### Esbuild
 
-Internally create-react-app use babel to compile the javascript / typescript files of your application. We can use these tools to replace the babel with esbuild / swc. `esbuild` also provide a minifier to replace terser.
+[esbuild](https://github.com/evanw/esbuild) is a super-fast javascript/typescript bundler and minifier written in Go. `esbuild` also provide a javascript minifier to replace [terser](https://github.com/terser/terser).
 
-### What are the benefits?
+#### Swc
 
-By using `create-react-app-esbuild` or `create-react-app-esbuild` you will get the following benefits:
-
-- Faster loading time in development
-- Faster build time
-- Faster tests
+[swc](https://swc.rs/) is a super-fast javascript/typescript compiler written in Rust. In the future you will be able to use swc to check your typescript files. swc is also creating their own webpack alternative called [spack](https://swc.rs/docs/usage-spack-cli).
 
 ## Benchmark
 
@@ -39,5 +42,5 @@ If you are trying this on a bigger project I would love to know the results you 
 
 📚 Ready to improve the workflow of your app in 2 minutes?
 
-- Follow the [installation guide](https://github.com/pradel/create-react-app-esbuild/tree/main/packages/craco-esbuild) for `craco-esbuild`.
-- Follow the [installation guide](https://github.com/pradel/create-react-app-swc/tree/main/packages/craco-swc) for `craco-swc`.
+- Follow the [installation guide](https://github.com/pradel/create-react-app-esbuild/tree/main/packages/craco-esbuild) to add `craco-esbuild`.
+- Follow the [installation guide](https://github.com/pradel/create-react-app-swc/tree/main/packages/craco-swc) to add `craco-swc`.
