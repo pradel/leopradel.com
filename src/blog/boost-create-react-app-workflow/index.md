@@ -37,7 +37,7 @@ esbuild is currently faster than swc as it also includes a minifier, so we can r
 
 If you are trying this on a bigger project I would love to know the results you get!
 
-📚 Ready to improve the workflow of your app?
+📚 Ready to improve the workflow of your app in 2 minutes?
 
 - Follow the [installation guide](https://github.com/pradel/create-react-app-esbuild/tree/main/packages/craco-esbuild) for `craco-esbuild`.
 - Follow the [installation guide](https://github.com/pradel/create-react-app-swc/tree/main/packages/craco-swc) for `craco-swc`.
