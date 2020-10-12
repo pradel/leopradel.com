@@ -14,8 +14,7 @@ As your app is growing, the development environment and compilation is getting s
 - Faster build time
 - Faster tests
 
-While writing this post I created 2 projects [create-react-app-swc](https://github.com/pradel/create-react-app-swc) and [create-react-app-esbuild](https://github.com/pradel/create-react-app-esbuild)
-to help you integrate either swc or esbuild easily in your application.
+While writing this post I created 2 projects [create-react-app-swc](https://github.com/pradel/create-react-app-swc) and [create-react-app-esbuild](https://github.com/pradel/create-react-app-esbuild) to help you integrate either swc or esbuild easily in your application.
 
 ### What are these tools and why are they faster?
 
