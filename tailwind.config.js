@@ -12,6 +12,18 @@ module.exports = {
         watermelon: '#FD4659',
       },
     },
+    typography: {
+      default: {
+        css: {
+          'code::before': {
+            content: '',
+          },
+          'code::after': {
+            content: '',
+          },
+        },
+      },
+    },
   },
   variants: {},
   plugins: [require('@tailwindcss/typography')],
