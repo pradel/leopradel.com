@@ -1,29 +1,22 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
-/* purgecss start ignore */
 body {
   font-family: 'Quicksand', sans-serif;
 }
 
 /* customise typography plugin */
 /* TODO migrate to tailwind config js file */
-.prose {
-  & pre {
-    @apply bg-gray-200;
-  }
-  & code {
-    @apply bg-gray-200 font-normal px-1;
-  }
-  & pre code {
-    @apply text-sm text-gray-700;
-  }
-  & a {
-    @apply text-watermelon font-semibold no-underline border-b border-watermelon;
-  }
+.prose pre {
+  @apply bg-gray-100;
 }
-
-/* purgecss end ignore */
+.prose code {
+  @apply bg-gray-100 font-normal px-1;
+}
+.prose pre code {
+  @apply text-sm text-gray-600;
+}
+.prose a {
+  @apply text-watermelon font-semibold no-underline border-b border-watermelon;
+}

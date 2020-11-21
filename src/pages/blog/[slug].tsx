@@ -54,7 +54,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
               {post.date} • {post.readingTime}
             </p>
           </header>
-          <hr className="my-8 border-b-2 border-gray-200" />
+          <hr className="my-8 border-b-2 border-gray-100" />
           <section
             className="prose lg:prose-lg"
             dangerouslySetInnerHTML={{ __html: post.content }}
