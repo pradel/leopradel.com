@@ -2,6 +2,9 @@ const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
 
 const nextConfig = {
+  future: {
+    webpack5: true,
+  },
   rewrites() {
     return [
       {
