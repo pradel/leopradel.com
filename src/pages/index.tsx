@@ -1,10 +1,12 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
 import { BlogPostPreview } from '../components/BlogPostPreview';
+import avatarImage from '../../public/avatar.jpg';
 
 interface HomeProps {
   latestPosts: {
@@ -34,11 +36,9 @@ const Home = ({ latestPosts }: HomeProps) => (
 
     <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
       <section className="flex flex-col items-center">
-        <img
-          className="rounded-full h-32 w-32"
-          src={require('../images/avatar.jpg?resize&size=150')}
-          alt="Avatar"
-        />
+        <div className="h-32 w-32">
+          <Image className="rounded-full" src={avatarImage} alt="Avatar" />
+        </div>
         <h2 className="leading-tight text-xl font-bold mt-4">Leo Pradel</h2>
         <p className="text-sm text-gray-800">
           Oss contributor passionate about nodejs, react and graphql.
