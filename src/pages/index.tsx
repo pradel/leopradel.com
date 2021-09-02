@@ -37,7 +37,12 @@ const Home = ({ latestPosts }: HomeProps) => (
     <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
       <section className="flex flex-col items-center">
         <div className="h-32 w-32">
-          <Image className="rounded-full" src={avatarImage} alt="Avatar" />
+          <Image
+            className="rounded-full"
+            src={avatarImage}
+            priority={true}
+            alt="Avatar"
+          />
         </div>
         <h2 className="leading-tight text-xl font-bold mt-4">Leo Pradel</h2>
         <p className="text-sm text-gray-800">
