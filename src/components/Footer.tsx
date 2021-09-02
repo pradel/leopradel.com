@@ -1,5 +1,9 @@
 import React from 'react';
 import { config } from '../config';
+import { GithubIcon } from '../icons/Github';
+import { ProducthuntIcon } from '../icons/Producthunt';
+import { RssIcon } from '../icons/Rss';
+import { TwitterIcon } from '../icons/Twitter';
 
 export const Footer = () => {
   return (
@@ -11,10 +15,9 @@ export const Footer = () => {
             href={config.twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
-            dangerouslySetInnerHTML={{
-              __html: require('../icons/twitter.svg?include'),
-            }}
-          />
+          >
+            <TwitterIcon />
+          </a>
         </li>
         <li className="mr-3">
           <a
@@ -22,10 +25,9 @@ export const Footer = () => {
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            dangerouslySetInnerHTML={{
-              __html: require('../icons/github.svg?include'),
-            }}
-          />
+          >
+            <GithubIcon />
+          </a>
         </li>
         <li className="mr-3">
           <a
@@ -33,10 +35,9 @@ export const Footer = () => {
             href={config.productHunturl}
             target="_blank"
             rel="noopener noreferrer"
-            dangerouslySetInnerHTML={{
-              __html: require('../icons/producthunt.svg?include'),
-            }}
-          />
+          >
+            <ProducthuntIcon />
+          </a>
         </li>
         <li>
           <a
@@ -44,10 +45,9 @@ export const Footer = () => {
             href={config.rssUrl}
             target="_blank"
             rel="noopener noreferrer"
-            dangerouslySetInnerHTML={{
-              __html: require('../icons/rss.svg?include'),
-            }}
-          />
+          >
+            <RssIcon />
+          </a>
         </li>
       </ul>
     </footer>
