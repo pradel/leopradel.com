@@ -64,7 +64,6 @@ export const markdownToHtml = async (markdown: string) => {
         },
       },
     })
-    // .use(html)
     .use(rehypeStringify)
     .process(markdown);
   return result.toString();
