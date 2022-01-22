@@ -33,7 +33,7 @@ const sitemap: NextApiHandler = async (_, res) => {
   res.writeHead(200, {
     'Content-Type': 'application/xml',
   });
-  return res.end(generatedSitemap);
+  res.end(generatedSitemap);
 };
 
 export default sitemap;
