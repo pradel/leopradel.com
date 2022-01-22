@@ -1,11 +1,11 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./src/**/*.{ts,tsx}', './src/icons/**/*.svg'],
+  content: ['./src/**/*.{ts,tsx}', './src/icons/**/*.svg'],
   theme: {
     extend: {
       colors: {
-        gray: colors.blueGray,
+        gray: colors.slate,
         watermelon: '#FD4659',
       },
       typography: {
@@ -21,9 +21,6 @@ module.exports = {
         },
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/typography')],
 };
