@@ -39,7 +39,7 @@ const rss: NextApiHandler = async (_, res) => {
   res.writeHead(200, {
     'Content-Type': 'application/xml',
   });
-  return res.end(feed.rss2());
+  res.end(feed.rss2());
 };
 
 export default rss;
