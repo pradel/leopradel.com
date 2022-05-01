@@ -8,15 +8,26 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [16]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          node-version: 12.x
+          version: 6.22.2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
       - name: Install Dependencies
-        run: yarn
+        run: pnpm install
+
       - name: Build
-        run: yarn build
+        run: pnpm run build
