@@ -17,7 +17,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
       <a className="group">
         <article key={post.slug}>
           <header>
-            <h3 className="leading-tight text-lg font-bold group-hover:underline">
+            <h3 className="font-sans leading-tight text-lg font-bold group-hover:underline">
               {post.title}
             </h3>
             <p className="text-sm mt-1 mb-1 text-gray-500">

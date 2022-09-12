@@ -47,7 +47,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
       <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
         <article>
           <header>
-            <h1 className="leading-tight text-4xl font-bold text-black">
+            <h1 className="font-sans leading-tight text-4xl font-bold text-black">
               {post.title}
             </h1>
             <p className="text-sm mt-1 mb-4 text-gray-500">
@@ -56,7 +56,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
           </header>
           <hr className="my-8 border-b-2 border-gray-100" />
           <section
-            className="prose lg:prose-lg"
+            className="prose lg:prose-lg prose-h1:font-sans prose-h2:font-sans prose-h3:font-sans prose-h4:font-sans"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

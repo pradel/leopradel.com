@@ -14,6 +14,8 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@fontsource/lato": "4.5.9",
+    "@fontsource/lustria": "4.5.10",
     "@radix-ui/react-icons": "1.1.1",
     "date-fns": "2.29.2",
     "fathom-client": "3.5.0",
@@ -48,7 +50,6 @@
     "remark-rehype": "10.1.0",
     "tailwindcss": "3.1.8",
     "ts-node": "10.9.1",
-    "typeface-quicksand": "1.1.13",
     "typescript": "4.8.3"
   }
 }

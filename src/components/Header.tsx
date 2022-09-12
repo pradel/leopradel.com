@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 
 export const Header = () => {
   return (
-    <header className="mx-auto max-w-3xl px-6 xl:px-12 mt-6">
+    <header className="mx-auto max-w-3xl px-6 xl:px-12 mt-6 font-sans">
       <ul className="flex justify-end">
         <li className="mr-3">
           <NextLink href="/" passHref>

@@ -46,13 +46,15 @@ const Blog = ({ posts }: BlogProps) => {
       <Header />
 
       <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
-        <h4 className="leading-tight text-4xl font-bold mt-20 mb-4">Blog</h4>
+        <h4 className="font-sans leading-tight text-4xl font-bold mt-20 mb-4">
+          Blog
+        </h4>
 
         <div className="flex flex-col space-y-5">
           {Object.keys(postsByYears)
             .reverse()
             .map((year) => (
-              <div>
+              <div key={year}>
                 <div className="text-sm font-bold text-gray-800 mb-2">
                   <span className="text-watermelon mr-2">—</span>
                   {year}

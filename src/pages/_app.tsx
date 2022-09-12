@@ -4,7 +4,9 @@ import Router from 'next/router';
 import Head from 'next/head';
 import * as Fathom from 'fathom-client';
 import { DefaultSeo } from 'next-seo';
-import 'typeface-quicksand';
+// TODO only import the one used
+import '@fontsource/lustria';
+import '@fontsource/Lato';
 // highlight.js theme
 import '../styles/atom-one-light.css';
 import '../styles/index.css';

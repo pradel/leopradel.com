@@ -46,14 +46,16 @@ const Home = ({ latestPosts }: HomeProps) => (
             alt="Avatar"
           />
         </div>
-        <h2 className="leading-tight text-xl font-bold mt-4">Leo Pradel</h2>
+        <h2 className="font-sans leading-tight text-xl font-bold mt-4">
+          Leo Pradel
+        </h2>
         <p className="text-sm text-gray-800">
           Oss contributor passionate about nodejs, react and graphql.
         </p>
       </section>
 
       <section>
-        <h4 className="leading-tight text-4xl font-bold mt-20 mb-6">
+        <h4 className="font-sans leading-tight text-4xl font-bold mt-20 mb-6">
           Latest posts
         </h4>
 
