@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { NextSeo } from 'next-seo';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';

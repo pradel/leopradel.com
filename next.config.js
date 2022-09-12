@@ -15,4 +15,6 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([], nextConfig);
+module.exports = (phase) => {
+  return withPlugins([], nextConfig)(phase, {});
+};
