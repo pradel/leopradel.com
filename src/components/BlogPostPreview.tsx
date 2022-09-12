@@ -15,7 +15,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
   return (
     <NextLink href={`/blog/${post.slug}`} passHref>
       <a className="group">
-        <article key={post.slug} className="mb-10">
+        <article key={post.slug}>
           <header>
             <h3 className="leading-tight text-lg font-bold group-hover:underline">
               {post.title}

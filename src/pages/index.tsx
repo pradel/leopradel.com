@@ -1,7 +1,9 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import NextLink from 'next/link';
 import Image from 'next/future/image';
 import { NextSeo } from 'next-seo';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
@@ -51,12 +53,24 @@ const Home = ({ latestPosts }: HomeProps) => (
       </section>
 
       <section>
-        <h4 className="leading-tight text-4xl font-bold mt-20 mb-4">
+        <h4 className="leading-tight text-4xl font-bold mt-20 mb-6">
           Latest posts
         </h4>
-        {latestPosts.map((post) => (
-          <BlogPostPreview key={post.slug} post={post} />
-        ))}
+
+        <div className="flex flex-col space-y-6">
+          {latestPosts.map((post) => (
+            <BlogPostPreview key={post.slug} post={post} />
+          ))}
+        </div>
+
+        <NextLink href={`/blog`} passHref>
+          <a className="mt-6 flex items-center hover:underline">
+            See all posts
+            <span className="ml-2">
+              <ArrowRightIcon />
+            </span>
+          </a>
+        </NextLink>
       </section>
     </main>
 
@@ -65,9 +79,7 @@ const Home = ({ latestPosts }: HomeProps) => (
 );
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const latestPosts = getBlogPostsPreview();
-
-  // TODO return only the last 2 items
+  const latestPosts = getBlogPostsPreview().slice(0, 3);
 
   return {
     props: {
