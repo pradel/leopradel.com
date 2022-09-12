@@ -50,7 +50,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
             <h1 className="leading-tight text-4xl font-bold text-black">
               {post.title}
             </h1>
-            <p className="text-sm mt-0 mb-4 text-gray-600">
+            <p className="text-sm mt-1 mb-4 text-gray-500">
               {post.date} • {post.readingTime}
             </p>
           </header>
