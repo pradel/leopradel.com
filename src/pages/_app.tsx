@@ -6,7 +6,7 @@ import * as Fathom from 'fathom-client';
 import { DefaultSeo } from 'next-seo';
 // TODO only import the one used
 import '@fontsource/lustria';
-import '@fontsource/Lato';
+import '@fontsource/lato';
 // highlight.js theme
 import '../styles/atom-one-light.css';
 import '../styles/index.css';
