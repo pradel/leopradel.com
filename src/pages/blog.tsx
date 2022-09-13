@@ -1,11 +1,12 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
+import { getYear } from 'date-fns';
+import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { BlogPostPreview } from '../components/BlogPostPreview';
 import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
-import { getYear } from 'date-fns';
 
 interface BlogPost {
   slug: string;
@@ -55,10 +56,11 @@ const Blog = ({ posts }: BlogProps) => {
             .reverse()
             .map((year) => (
               <div key={year}>
-                <div className="text-sm font-bold text-gray-800 mb-2">
-                  <span className="text-watermelon mr-2">—</span>
+                <div className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                  <span className="text-watermelon mr-2">
+                    <ChevronRightIcon />
+                  </span>
                   {year}
-                  <span className="text-watermelon ml-2">—</span>
                 </div>
                 <div className="flex flex-col space-y-6">
                   {postsByYears[Number(year)].map((post) => (
