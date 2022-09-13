@@ -9,7 +9,6 @@ import { Footer } from '../components/Footer';
 import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
 import { BlogPostPreview } from '../components/BlogPostPreview';
 import avatarImage from '../../public/avatar.jpg';
-import { config } from '../config';
 
 interface HomeProps {
   latestPosts: {
@@ -43,6 +42,8 @@ const Home = ({ latestPosts }: HomeProps) => (
           <Image
             className="rounded-full"
             src={avatarImage}
+            height={80}
+            width={80}
             priority={true}
             alt="Avatar"
           />
