@@ -1,12 +1,15 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
+import NextLink from 'next/link';
+import Image from 'next/future/image';
 import { NextSeo } from 'next-seo';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
 import { BlogPostPreview } from '../components/BlogPostPreview';
 import avatarImage from '../../public/avatar.jpg';
+import { config } from '../config';
 
 interface HomeProps {
   latestPosts: {
@@ -35,8 +38,8 @@ const Home = ({ latestPosts }: HomeProps) => (
     <Header />
 
     <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
-      <section className="flex flex-col items-center">
-        <div className="h-32 w-32">
+      <section className="flex items-center">
+        <div className="h-16 w-16">
           <Image
             className="rounded-full"
             src={avatarImage}
@@ -44,19 +47,59 @@ const Home = ({ latestPosts }: HomeProps) => (
             alt="Avatar"
           />
         </div>
-        <h2 className="leading-tight text-xl font-bold mt-4">Leo Pradel</h2>
-        <p className="text-sm text-gray-800">
-          Oss contributor passionate about nodejs, react and graphql.
-        </p>
+        <div className="ml-4">
+          <h2 className="font-sans leading-tight text-xl font-bold">
+            Leo Pradel
+          </h2>
+          <p className="text-sm text-gray-800">
+            Co-founder of{' '}
+            <a
+              href="https://www.sigle.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @sigleapp
+            </a>{' '}
+            | Maker,{' '}
+            <a
+              href="https://www.ledokku.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @ledokku
+            </a>
+            ,{' '}
+            <a
+              href="https://www.accountsjs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @accountsjs
+            </a>{' '}
+            | oss contributor
+          </p>
+        </div>
       </section>
 
       <section>
-        <h4 className="leading-tight text-4xl font-bold mt-20 mb-4">
+        <h4 className="font-sans leading-tight text-4xl font-bold mt-16 mb-6">
           Latest posts
         </h4>
-        {latestPosts.map((post) => (
-          <BlogPostPreview key={post.slug} post={post} />
-        ))}
+
+        <div className="flex flex-col space-y-6">
+          {latestPosts.map((post) => (
+            <BlogPostPreview key={post.slug} post={post} />
+          ))}
+        </div>
+
+        <NextLink href={`/blog`} passHref>
+          <a className="mt-6 flex items-center hover:underline">
+            See all posts
+            <span className="ml-2">
+              <ArrowRightIcon />
+            </span>
+          </a>
+        </NextLink>
       </section>
     </main>
 
@@ -65,9 +108,7 @@ const Home = ({ latestPosts }: HomeProps) => (
 );
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const latestPosts = getBlogPostsPreview();
-
-  // TODO return only the last 2 items
+  const latestPosts = getBlogPostsPreview().slice(0, 3);
 
   return {
     props: {

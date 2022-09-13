@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Lato";
 }
 
 /* customise typography plugin */
