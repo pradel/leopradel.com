@@ -54,21 +54,25 @@ const Blog = ({ posts }: BlogProps) => {
         <div className="flex flex-col space-y-5">
           {Object.keys(postsByYears)
             .reverse()
-            .map((year) => (
-              <div key={year}>
-                <div className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                  <span className="text-watermelon mr-2">
-                    <ChevronRightIcon />
-                  </span>
-                  {year}
+            .map(
+              (year) => (
+                <div key={year}>
+                  <div className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                    <span className="text-watermelon mr-2">
+                      <ChevronRightIcon />
+                    </span>
+                    {year}
+                  </div>
+                  <div className="flex flex-col space-y-6">
+                    {postsByYears[Number(year)].map(
+                      (post) => (
+                        <BlogPostPreview key={post.slug} post={post} />
+                      ),
+                    )}
+                  </div>
                 </div>
-                <div className="flex flex-col space-y-6">
-                  {postsByYears[Number(year)].map((post) => (
-                    <BlogPostPreview key={post.slug} post={post} />
-                  ))}
-                </div>
-              </div>
-            ))}
+              ),
+            )}
         </div>
       </main>
 

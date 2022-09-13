@@ -97,9 +97,11 @@ const Projects = ({ projects }: ProjectsPageProps) => (
         Projects
       </h4>
       <section className="lg:flex lg:flex-wrap -mx-2">
-        {projects.map((project) => (
-          <Project key={project.title} project={project} />
-        ))}
+        {projects.map(
+          (project) => (
+            <Project key={project.title} project={project} />
+          ),
+        )}
       </section>
     </main>
 
@@ -151,12 +153,12 @@ export async function getStaticProps() {
       const githubOrg = project.githubUrl.split('/')[3];
       const githubRepo = project.githubUrl.split('/')[4];
       const data = await fetch(
-        `https://api.github.com/repos/${githubOrg}/${githubRepo}`
+        `https://api.github.com/repos/${githubOrg}/${githubRepo}`,
       );
       const json = await data.json();
       project.githubStarsCount = json.stargazers_count;
       return project;
-    })
+    }),
   );
 
   return {

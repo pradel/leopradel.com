@@ -102,11 +102,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }).filter((dirent) => dirent.isDirectory());
 
   return {
-    paths: folderNames.map((dirent) => ({
-      params: {
-        slug: dirent.name,
-      },
-    })),
+    paths: folderNames.map(
+      (dirent) => ({
+        params: {
+          slug: dirent.name,
+        },
+      }),
+    ),
     fallback: false,
   };
 };

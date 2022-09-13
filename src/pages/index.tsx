@@ -53,30 +53,27 @@ const Home = ({ latestPosts }: HomeProps) => (
             Leo Pradel
           </h2>
           <p className="text-sm text-gray-800">
-            Co-founder of{' '}
-            <a
+            Co-founder of <a
               href="https://www.sigle.io"
               target="_blank"
               rel="noopener noreferrer"
             >
               @sigleapp
-            </a>{' '}
-            | Maker,{' '}
-            <a
+            </a>
+            | Maker, <a
               href="https://www.ledokku.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               @ledokku
             </a>
-            ,{' '}
-            <a
+            , <a
               href="https://www.accountsjs.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               @accountsjs
-            </a>{' '}
+            </a>
             | oss contributor
           </p>
         </div>
@@ -88,9 +85,11 @@ const Home = ({ latestPosts }: HomeProps) => (
         </h4>
 
         <div className="flex flex-col space-y-6">
-          {latestPosts.map((post) => (
-            <BlogPostPreview key={post.slug} post={post} />
-          ))}
+          {latestPosts.map(
+            (post) => (
+              <BlogPostPreview key={post.slug} post={post} />
+            ),
+          )}
         </div>
 
         <NextLink href={`/blog`} passHref>

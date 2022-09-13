@@ -8,7 +8,7 @@
     "build": "yarn generate:json && next build",
     "start": "next start",
     "generate:json": "yarn ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
-    "prettier": "prettier --write '**/*.{json,md,js,ts,jsx,tsx,yml,css}'"
+    "format": "rome format --write --quote-style single --indent-style space src"
   },
   "prettier": {
     "singleQuote": true
@@ -48,6 +48,7 @@
     "rehype-stringify": "9.0.3",
     "remark-parse": "10.0.1",
     "remark-rehype": "10.1.0",
+    "rome": "0.9.2-next",
     "tailwindcss": "3.1.8",
     "ts-node": "10.9.1",
     "typescript": "4.8.3"
