@@ -10,9 +10,6 @@
     "generate:json": "yarn ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
     "format": "rome format --write --quote-style single --indent-style space src"
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "dependencies": {
     "@fontsource/lato": "4.5.9",
     "@fontsource/lustria": "4.5.10",
@@ -39,7 +36,6 @@
     "highlight.js": "11.6.0",
     "next-compose-plugins": "2.2.1",
     "postcss": "8.4.16",
-    "prettier": "2.7.1",
     "reading-time": "1.5.0",
     "rehype-autolink-headings": "6.1.1",
     "rehype-highlight": "5.0.2",
