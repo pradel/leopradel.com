@@ -16,7 +16,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <TwitterIcon />
+            <TwitterIcon className="h-5 w-5" />
           </a>
         </li>
         <li>
@@ -26,7 +26,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GithubIcon />
+            <GithubIcon className="h-5 w-5" />
           </a>
         </li>
         <li>
@@ -36,7 +36,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ProducthuntIcon />
+            <ProducthuntIcon className="h-5 w-5" />
           </a>
         </li>
         <li>
@@ -46,7 +46,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <RssIcon />
+            <RssIcon className="h-5 w-5" />
           </a>
         </li>
       </ul>
