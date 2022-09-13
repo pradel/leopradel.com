@@ -7,21 +7,21 @@ export const Header = () => {
       <ul className="flex justify-end">
         <li className="mr-3">
           <NextLink href="/" passHref>
-            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-1 px-3">
+            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3">
               Home
             </a>
           </NextLink>
         </li>
         <li className="mr-3">
           <NextLink href="/blog" passHref>
-            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-1 px-3">
+            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3">
               Blog
             </a>
           </NextLink>
         </li>
         <li>
           <NextLink href="/projects" passHref>
-            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 py-1 px-3">
+            <a className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3">
               Projects
             </a>
           </NextLink>

@@ -8,10 +8,10 @@ import { TwitterIcon } from '../icons/Twitter';
 export const Footer = () => {
   return (
     <footer className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
-      <ul className="flex justify-center">
-        <li className="mr-3">
+      <ul className="flex justify-center space-x-3">
+        <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
             href={config.twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -19,9 +19,9 @@ export const Footer = () => {
             <TwitterIcon />
           </a>
         </li>
-        <li className="mr-3">
+        <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -29,9 +29,9 @@ export const Footer = () => {
             <GithubIcon />
           </a>
         </li>
-        <li className="mr-3">
+        <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
             href={config.productHunturl}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-200 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
             href={config.rssUrl}
             target="_blank"
             rel="noopener noreferrer"
