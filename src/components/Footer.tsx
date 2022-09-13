@@ -11,7 +11,7 @@ export const Footer = () => {
       <ul className="flex justify-center space-x-3">
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
             href={config.twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -21,7 +21,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -31,7 +31,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
             href={config.productHunturl}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-3"
+            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
             href={config.rssUrl}
             target="_blank"
             rel="noopener noreferrer"
