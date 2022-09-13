@@ -13,7 +13,7 @@ interface BlogPostPreviewProps {
 
 export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
   return (
-    <NextLink href={`/blog/${post.slug}`} passHref>
+    <NextLink href={`/blog/${post.slug}`} passHref={true}>
       <a className="group">
         <article key={post.slug}>
           <header>
