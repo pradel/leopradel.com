@@ -6,7 +6,7 @@ description: 'Did you know that you can use pnpm to manage your Node.js dependen
 
 With so many tools available to manage Node.js installations it can be hard to choose the best option. So, do you still need a tool like nvm or volta in 2023?
 
-Let me introduce you to pnpm, my new go-to package manager. It's not only fast and disk-space efficient but also replaces npm or yarn for managing Node.js projects. And guess what? pnpm can handle your Node environment and directly install or update Node.js too! That's right, with just one tool, we can manage everything - project dependencies and the Node.js environment.
+Let me introduce you to [pnpm](https://pnpm.io/), my new go-to package manager. It's not only fast and disk-space efficient but also replaces npm or yarn for managing Node.js projects. And guess what? pnpm can handle your Node environment and directly install or update Node.js too! That's right, with just one tool, we can manage everything - project dependencies and the Node.js environment.
 
 First, let's get the latest version of pnpm up and running with this simple command:
 
