@@ -97,11 +97,9 @@ const Projects = ({ projects }: ProjectsPageProps) => (
         Projects
       </h4>
       <section className="lg:flex lg:flex-wrap -mx-2">
-        {projects.map(
-          (project) => (
-            <Project key={project.title} project={project} />
-          ),
-        )}
+        {projects.map((project) => (
+          <Project key={project.title} project={project} />
+        ))}
       </section>
     </main>
 
