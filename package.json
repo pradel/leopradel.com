@@ -39,7 +39,7 @@
     "highlight.js": "11.6.0",
     "next-compose-plugins": "2.2.1",
     "postcss": "8.4.21",
-    "prettier": "2.7.1",
+    "prettier": "2.8.7",
     "reading-time": "1.5.0",
     "rehype-autolink-headings": "6.1.1",
     "rehype-highlight": "5.0.2",

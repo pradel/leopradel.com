@@ -73,8 +73,8 @@ devDependencies:
     specifier: 8.4.21
     version: 8.4.21
   prettier:
-    specifier: 2.7.1
-    version: 2.7.1
+    specifier: 2.8.7
+    version: 2.8.7
   reading-time:
     specifier: 1.5.0
     version: 1.5.0
@@ -2716,8 +2716,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier@2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
