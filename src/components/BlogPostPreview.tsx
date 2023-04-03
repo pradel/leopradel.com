@@ -13,22 +13,20 @@ interface BlogPostPreviewProps {
 
 export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
   return (
-    <NextLink href={`/blog/${post.slug}`} passHref>
-      <a className="group">
-        <article key={post.slug}>
-          <header>
-            <h3 className="font-sans leading-tight text-lg font-bold group-hover:underline">
-              {post.title}
-            </h3>
-            <p className="text-sm mt-1 mb-1 text-gray-500">
-              {post.date} • {post.readingTime}
-            </p>
-          </header>
-          <section>
-            <p className="text-gray-700">{post.description}</p>
-          </section>
-        </article>
-      </a>
+    <NextLink href={`/blog/${post.slug}`} className="group">
+      <article key={post.slug}>
+        <header>
+          <h3 className="font-sans leading-tight text-lg font-bold group-hover:underline">
+            {post.title}
+          </h3>
+          <p className="text-sm mt-1 mb-1 text-gray-500">
+            {post.date} • {post.readingTime}
+          </p>
+        </header>
+        <section>
+          <p className="text-gray-700">{post.description}</p>
+        </section>
+      </article>
     </NextLink>
   );
 };

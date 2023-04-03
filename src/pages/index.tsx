@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import NextLink from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
@@ -93,13 +93,14 @@ const Home = ({ latestPosts }: HomeProps) => (
           ))}
         </div>
 
-        <NextLink href={`/blog`} passHref>
-          <a className="mt-6 flex items-center hover:underline">
-            See all posts
-            <span className="ml-2">
-              <ArrowRightIcon />
-            </span>
-          </a>
+        <NextLink
+          href={`/blog`}
+          className="mt-6 flex items-center hover:underline"
+        >
+          See all posts
+          <span className="ml-2">
+            <ArrowRightIcon />
+          </span>
         </NextLink>
       </section>
     </main>
