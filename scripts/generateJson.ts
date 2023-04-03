@@ -29,7 +29,7 @@ const generateJson = async () => {
 
   writeFileSync(
     join(process.cwd(), 'src', 'blog', 'posts.json'),
-    JSON.stringify(posts)
+    JSON.stringify(posts),
   );
 };
 

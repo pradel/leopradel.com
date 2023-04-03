@@ -27,7 +27,7 @@ const sitemap: NextApiHandler = async (_, res) => {
   smStream.end();
 
   const generatedSitemap = await streamToPromise(smStream).then((sm) =>
-    sm.toString()
+    sm.toString(),
   );
 
   res.writeHead(200, {

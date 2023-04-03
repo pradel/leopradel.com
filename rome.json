@@ -1,0 +1,13 @@
+{
+  "files": {
+    "ignore": [".next/**"]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  }
+}
