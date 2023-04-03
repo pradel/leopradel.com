@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 /* customise typography plugin */

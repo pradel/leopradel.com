@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import NextLink from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
@@ -53,27 +53,30 @@ const Home = ({ latestPosts }: HomeProps) => (
             Leo Pradel
           </h2>
           <p className="text-sm text-gray-800">
-            Co-founder of <a
+            Co-founder of{' '}
+            <a
               href="https://www.sigle.io"
               target="_blank"
               rel="noopener noreferrer"
             >
               @sigleapp
-            </a>
-            | Maker, <a
+            </a>{' '}
+            | Maker,{' '}
+            <a
               href="https://www.ledokku.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               @ledokku
             </a>
-            , <a
+            ,{' '}
+            <a
               href="https://www.accountsjs.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               @accountsjs
-            </a>
+            </a>{' '}
             | oss contributor
           </p>
         </div>
@@ -85,20 +88,19 @@ const Home = ({ latestPosts }: HomeProps) => (
         </h4>
 
         <div className="flex flex-col space-y-6">
-          {latestPosts.map(
-            (post) => (
-              <BlogPostPreview key={post.slug} post={post} />
-            ),
-          )}
+          {latestPosts.map((post) => (
+            <BlogPostPreview key={post.slug} post={post} />
+          ))}
         </div>
 
-        <NextLink href="/blog" passHref={true}>
-          <a className="mt-6 flex items-center hover:underline">
-            See all posts
-            <span className="ml-2">
-              <ArrowRightIcon />
-            </span>
-          </a>
+        <NextLink
+          href={`/blog`}
+          className="mt-6 flex items-center hover:underline"
+        >
+          See all posts
+          <span className="ml-2">
+            <ArrowRightIcon />
+          </span>
         </NextLink>
       </section>
     </main>
