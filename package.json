@@ -8,7 +8,7 @@
     "build": "pnpm generate:json && next build",
     "start": "next start",
     "generate:json": "pnpm ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
-    "format": "rome format --write --quote-style single --indent-style space src"
+    "format": "rome format --write ."
   },
   "prettier": {
     "singleQuote": true
