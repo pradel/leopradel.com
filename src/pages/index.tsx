@@ -94,7 +94,7 @@ const Home = ({ latestPosts }: HomeProps) => (
         </div>
 
         <NextLink
-          href={`/blog`}
+          href="/blog"
           className="mt-6 flex items-center hover:underline"
         >
           See all posts
