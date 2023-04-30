@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           {post.date} • {post.readingTime}
         </p>
       </header>
-      <hr className="my-8 md:my-12 border-b-2 border-gray-100" />
+      <hr className="my-8 border-b-2 border-gray-100 md:my-12" />
       <section
         className="prose lg:prose-lg prose-h1:font-sans prose-h2:font-sans prose-h3:font-sans prose-h4:font-sans"
         dangerouslySetInnerHTML={{ __html: post.content }}

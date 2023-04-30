@@ -19,7 +19,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
           <h3 className="font-sans text-xl font-semibold leading-tight group-hover:underline">
             {post.title}
           </h3>
-          <p className="my-1 text-sm text-gray-600 font-light">
+          <p className="my-1 text-sm font-light text-gray-600">
             {post.date} • {post.readingTime}
           </p>
         </header>
