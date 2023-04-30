@@ -1,4 +1,4 @@
-import { StarFilledIcon } from '@radix-ui/react-icons';
+import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
 import { Project } from './get-projects';
 
 interface ProjectProps {
@@ -8,7 +8,7 @@ interface ProjectProps {
 export const ProjectCard = ({ project }: ProjectProps) => {
   return (
     <div className="flex lg:w-1/2">
-      <div className="m-2 flex w-full flex-col justify-between rounded-lg border border-gray-400 bg-white p-4 leading-normal shadow-sm transition-shadow duration-300 ease-linear hover:shadow-md">
+      <div className="m-2 flex w-full flex-col justify-between rounded-lg border border-gray-400 bg-white p-4 leading-normal shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
         <div className="space-y-1">
           <h3>
             <a
@@ -59,10 +59,14 @@ export const ProjectCard = ({ project }: ProjectProps) => {
               </a>
             )}
           </p>
-          <p className="flex items-center space-x-0.5 text-gray-600">
-            <StarFilledIcon />
-            <span>{project.githubStarsCount}</span>
-          </p>
+          {project.githubStarsCount && (
+            <p className="flex items-center space-x-1 text-sm text-gray-600">
+              <StarFilledIcon className="h-3 w-3" />
+              <span>
+                {new Intl.NumberFormat().format(project.githubStarsCount)}
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </div>
