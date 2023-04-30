@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { BlogPostPreview } from '../components/blog-post-preview';
 import { getBlogPostsPreview } from '../lib/get-blog-posts-preview';
+import { PageWrapper } from './page-wrapper';
 
 export default async function Page() {
   const latestPosts = getBlogPostsPreview().slice(0, 3);
 
   return (
-    <>
+    <PageWrapper>
       <section className="flex items-center">
         <div className="h-16 w-16">
           <Image
@@ -73,6 +74,6 @@ export default async function Page() {
           </span>
         </Link>
       </section>
-    </>
+    </PageWrapper>
   );
 }

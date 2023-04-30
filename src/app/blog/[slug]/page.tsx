@@ -6,6 +6,7 @@ import { readFileSync } from 'fs';
 import matter from 'gray-matter';
 import { markdownToHtml } from '@/lib/markdownToHtml';
 import allPosts from '../../../blog/posts.json';
+import { PageWrapper } from '@/app/page-wrapper';
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -58,20 +59,22 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getPost(slug);
 
   return (
-    <article>
-      <header className="text-center">
-        <h1 className="font-sans text-4xl font-semibold leading-tight text-black">
-          <Balancer>{post.title}</Balancer>
-        </h1>
-        <p className="mt-2 text-sm text-gray-600">
-          {post.date} • {post.readingTime}
-        </p>
-      </header>
-      <hr className="my-8 border-b-2 border-gray-100 md:my-12" />
-      <section
-        className="prose lg:prose-lg prose-h1:font-sans prose-h2:font-sans prose-h3:font-sans prose-h4:font-sans"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
-    </article>
+    <PageWrapper>
+      <article>
+        <header className="text-center">
+          <h1 className="font-sans text-4xl font-semibold leading-tight text-black">
+            <Balancer>{post.title}</Balancer>
+          </h1>
+          <p className="mt-2 text-sm text-gray-600">
+            {post.date} • {post.readingTime}
+          </p>
+        </header>
+        <hr className="my-8 border-b-2 border-gray-100 md:my-12" />
+        <section
+          className="prose lg:prose-lg prose-h1:font-sans prose-h2:font-sans prose-h3:font-sans prose-h4:font-sans"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      </article>
+    </PageWrapper>
   );
 }
