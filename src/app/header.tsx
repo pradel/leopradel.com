@@ -1,34 +1,26 @@
 import React from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 export const Header = () => {
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/projects', label: 'Projects' },
+  ];
+
   return (
-    <header className="mx-auto max-w-3xl px-6 xl:px-12 mt-6 font-sans">
-      <ul className="flex justify-end">
-        <li className="mr-3">
-          <NextLink
-            href="/"
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3"
-          >
-            Home
-          </NextLink>
-        </li>
-        <li className="mr-3">
-          <NextLink
-            href="/blog"
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3"
-          >
-            Blog
-          </NextLink>
-        </li>
-        <li>
-          <NextLink
-            href="/projects"
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 py-1 px-3"
-          >
-            Projects
-          </NextLink>
-        </li>
+    <header className="mx-auto mt-6 max-w-3xl px-6 font-sans xl:px-12">
+      <ul className="flex justify-end space-x-3">
+        {links.map(({ href, label }) => (
+          <li key={`${href}${label}`}>
+            <Link
+              href={href}
+              className="rounded border border-white px-3 py-2 font-medium hover:bg-gray-100 hover:text-gray-700"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </header>
   );

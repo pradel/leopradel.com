@@ -6,49 +6,31 @@ import { RssIcon } from '../icons/Rss';
 import { TwitterIcon } from '../icons/Twitter';
 
 export const Footer = () => {
+  const links = [
+    { href: config.twitterUrl, icon: <TwitterIcon className="h-5 w-5" /> },
+    { href: config.githubUrl, icon: <GithubIcon className="h-5 w-5" /> },
+    {
+      href: config.productHunturl,
+      icon: <ProducthuntIcon className="h-5 w-5" />,
+    },
+    { href: config.rssUrl, icon: <RssIcon className="h-5 w-5" /> },
+  ];
+
   return (
-    <footer className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
+    <footer className="mx-auto mb-4 mt-20 max-w-3xl px-6 xl:px-12">
       <ul className="flex justify-center space-x-3">
-        <li>
-          <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
-            href={config.twitterUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TwitterIcon className="h-5 w-5" />
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
-            href={config.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubIcon className="h-5 w-5" />
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
-            href={config.productHunturl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ProducthuntIcon className="h-5 w-5" />
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
-            href={config.rssUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RssIcon className="h-5 w-5" />
-          </a>
-        </li>
+        {links.map(({ href, icon }) => (
+          <li key={href}>
+            <a
+              className="inline-block rounded p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {icon}
+            </a>
+          </li>
+        ))}
       </ul>
     </footer>
   );

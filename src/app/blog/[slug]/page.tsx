@@ -1,4 +1,5 @@
 import readingTime from 'reading-time';
+import Balancer from 'react-wrap-balancer';
 import { format } from 'date-fns';
 import { join } from 'path';
 import { readFileSync } from 'fs';
@@ -58,15 +59,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <article>
-      <header>
-        <h1 className="font-sans leading-tight text-4xl font-bold text-black">
-          {post.title}
+      <header className="text-center">
+        <h1 className="font-sans text-4xl font-semibold leading-tight text-black">
+          <Balancer>{post.title}</Balancer>
         </h1>
-        <p className="text-sm mt-1 mb-4 text-gray-500">
+        <p className="mt-2 text-sm text-gray-600">
           {post.date} • {post.readingTime}
         </p>
       </header>
-      <hr className="my-8 border-b-2 border-gray-100" />
+      <hr className="my-8 border-b-2 border-gray-100 md:my-12" />
       <section
         className="prose lg:prose-lg prose-h1:font-sans prose-h2:font-sans prose-h3:font-sans prose-h4:font-sans"
         dangerouslySetInnerHTML={{ __html: post.content }}

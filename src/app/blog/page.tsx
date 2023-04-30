@@ -25,7 +25,7 @@ export default async function Page() {
 
   return (
     <>
-      <h4 className="font-sans leading-tight text-4xl font-bold mt-20 mb-4">
+      <h4 className="mb-4 mt-20 font-sans text-4xl font-bold leading-tight">
         Blog
       </h4>
 
@@ -33,9 +33,9 @@ export default async function Page() {
         {Object.keys(postsByYears)
           .reverse()
           .map((year) => (
-            <div key={year}>
-              <div className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                <span className="text-watermelon mr-2">
+            <div key={year} className="space-y-4">
+              <div className=" flex items-center text-sm font-bold text-gray-800">
+                <span className="mr-2 text-watermelon">
                   <ChevronRightIcon />
                 </span>
                 {year}
