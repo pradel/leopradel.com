@@ -7,12 +7,12 @@ interface ProjectProps {
 
 export const ProjectCard = ({ project }: ProjectProps) => {
   return (
-    <div className="lg:w-1/2 flex">
-      <div className="border border-gray-400 bg-white rounded p-4 flex flex-col justify-between leading-normal m-2 w-full hover:shadow-md transition-shadow duration-300 ease-linear">
-        <div>
-          <h3 className="mb-2">
+    <div className="flex lg:w-1/2">
+      <div className="m-2 flex w-full flex-col justify-between rounded-lg border border-gray-400 bg-white p-4 leading-normal shadow-sm transition-shadow duration-300 ease-linear hover:shadow-md">
+        <div className="space-y-1">
+          <h3>
             <a
-              className="font-sans text-gray-900 hover:underline font-bold text-xl"
+              className="text-lg font-semibold hover:underline"
               href={project.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -20,9 +20,9 @@ export const ProjectCard = ({ project }: ProjectProps) => {
               {project.title}
             </a>
           </h3>
-          <p className="text-gray-700 text-base">{project.description}</p>
+          <p className="text-sm text-gray-600">{project.description}</p>
         </div>
-        <div className="mt-1 flex items-center justify-between">
+        <div className="mt-6 flex items-center justify-between">
           <p className="-mx-1 flex items-center">
             {project.twitterUrl && (
               <a
@@ -32,7 +32,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-4 h-4 text-gray-600 hover:text-watermelon fill-current transition-colors duration-150 ease-in-out"
+                  className="h-4 w-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -50,7 +50,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
                 rel="noopener noreferrer"
               >
                 <svg
-                  className="w-4 h-4 text-gray-600 hover:text-watermelon fill-current transition-colors duration-150 ease-in-out"
+                  className="h-4 w-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
                   viewBox="0 0 24 24"
                 >
                   <title>GitHub icon</title>
@@ -59,7 +59,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
               </a>
             )}
           </p>
-          <p className="text-gray-600 flex items-center space-x-0.5">
+          <p className="flex items-center space-x-0.5 text-gray-600">
             <StarFilledIcon />
             <span>{project.githubStarsCount}</span>
           </p>

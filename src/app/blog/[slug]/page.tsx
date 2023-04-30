@@ -59,10 +59,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <article>
       <header>
-        <h1 className="font-sans leading-tight text-4xl font-bold text-black">
+        <h1 className="font-sans text-4xl font-bold leading-tight text-black">
           {post.title}
         </h1>
-        <p className="text-sm mt-1 mb-4 text-gray-500">
+        <p className="mb-4 mt-1 text-sm text-gray-500">
           {post.date} • {post.readingTime}
         </p>
       </header>

@@ -10,10 +10,10 @@ export default async function Page() {
 
   return (
     <>
-      <h4 className="font-sans leading-tight text-4xl font-bold mt-20 mb-4">
+      <h4 className="mb-4 mt-20 font-sans text-4xl font-bold leading-tight">
         Projects
       </h4>
-      <section className="lg:flex lg:flex-wrap -mx-2">
+      <section className="-mx-2 lg:flex lg:flex-wrap">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}

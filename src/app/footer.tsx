@@ -7,11 +7,11 @@ import { TwitterIcon } from '../icons/Twitter';
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-4">
+    <footer className="mx-auto mb-4 mt-20 max-w-3xl px-6 xl:px-12">
       <ul className="flex justify-center space-x-3">
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
+            className="inline-block rounded border border-white p-2 text-gray-600 hover:border-gray-200 hover:bg-gray-100"
             href={config.twitterUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -21,7 +21,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
+            className="inline-block rounded border border-white p-2 text-gray-600 hover:border-gray-200 hover:bg-gray-100"
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -31,7 +31,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
+            className="inline-block rounded border border-white p-2 text-gray-600 hover:border-gray-200 hover:bg-gray-100"
             href={config.productHunturl}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            className="inline-block border border-white rounded hover:border-gray-200 text-gray-600 hover:bg-gray-100 p-2"
+            className="inline-block rounded border border-white p-2 text-gray-600 hover:border-gray-200 hover:bg-gray-100"
             href={config.rssUrl}
             target="_blank"
             rel="noopener noreferrer"

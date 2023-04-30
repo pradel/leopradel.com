@@ -22,7 +22,7 @@ export default async function Page() {
           />
         </div>
         <div className="ml-4">
-          <h2 className="font-sans leading-tight text-xl font-bold">
+          <h2 className="font-sans text-xl font-bold leading-tight">
             Leo Pradel
           </h2>
           <p className="text-sm text-gray-800">
@@ -56,7 +56,7 @@ export default async function Page() {
       </section>
 
       <section>
-        <h4 className="font-sans leading-tight text-4xl font-bold mt-16 mb-6">
+        <h4 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
           Latest posts
         </h4>
 

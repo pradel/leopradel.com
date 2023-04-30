@@ -42,12 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx(inter.className, 'antialiased')}
+        className={clsx(inter.className, 'text-gray-900 antialiased')}
         suppressHydrationWarning={true}
       >
         <Fathom />
         <Header />
-        <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+        <main className="mx-auto mb-12 mt-20 max-w-3xl px-6 xl:px-12">
           {children}
         </main>
         <Footer />
