@@ -1,5 +1,5 @@
 import React from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 interface BlogPostPreviewProps {
   post: {
@@ -13,7 +13,7 @@ interface BlogPostPreviewProps {
 
 export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
   return (
-    <NextLink href={`/blog/${post.slug}`} className="group">
+    <Link href={`/blog/${post.slug}`} className="group">
       <article key={post.slug}>
         <header>
           <h3 className="font-sans leading-tight text-lg font-bold group-hover:underline">
@@ -27,6 +27,6 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
           <p className="text-gray-700">{post.description}</p>
         </section>
       </article>
-    </NextLink>
+    </Link>
   );
 };

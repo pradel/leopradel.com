@@ -5,8 +5,8 @@ import { getYear } from 'date-fns';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { BlogPostPreview } from '../components/BlogPostPreview';
-import { getBlogPostsPreview } from '../lib/getBlogPostsPreview';
+import { BlogPostPreview } from '../components/blog-post-preview';
+import { getBlogPostsPreview } from '../lib/get-blog-posts-preview';
 
 interface BlogPost {
   slug: string;
