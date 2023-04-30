@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { BlogPostPreview } from '../components/blog-post-preview';
 import { getBlogPostsPreview } from '../lib/get-blog-posts-preview';
+import { PageWrapper } from './page-wrapper';
 
 export default async function Page() {
   const latestPosts = getBlogPostsPreview().slice(0, 3);
 
   return (
-    <>
+    <PageWrapper>
       <section className="flex items-center">
         <div className="h-16 w-16">
           <Image
@@ -22,9 +23,9 @@ export default async function Page() {
           />
         </div>
         <div className="ml-4">
-          <h2 className="font-sans text-xl font-bold leading-tight">
-            Leo Pradel
-          </h2>
+          <h1 className="font-sans text-xl font-bold leading-tight">
+            Léo Pradel
+          </h1>
           <p className="text-sm text-gray-800">
             Co-founder of{' '}
             <a
@@ -56,9 +57,9 @@ export default async function Page() {
       </section>
 
       <section>
-        <h4 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
+        <h2 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
           Latest posts
-        </h4>
+        </h2>
 
         <div className="flex flex-col space-y-6">
           {latestPosts.map((post) => (
@@ -73,6 +74,6 @@ export default async function Page() {
           </span>
         </Link>
       </section>
-    </>
+    </PageWrapper>
   );
 }

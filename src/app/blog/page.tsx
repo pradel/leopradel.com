@@ -2,6 +2,7 @@ import { getYear } from 'date-fns';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { getBlogPostsPreview } from '@/lib/get-blog-posts-preview';
 import { BlogPostPreview } from '@/components/blog-post-preview';
+import { PageWrapper } from '../page-wrapper';
 
 interface BlogPost {
   slug: string;
@@ -24,7 +25,7 @@ export default async function Page() {
   });
 
   return (
-    <>
+    <PageWrapper>
       <h4 className="mb-4 mt-20 font-sans text-4xl font-bold leading-tight">
         Blog
       </h4>
@@ -48,6 +49,6 @@ export default async function Page() {
             </div>
           ))}
       </div>
-    </>
+    </PageWrapper>
   );
 }

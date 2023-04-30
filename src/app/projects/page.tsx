@@ -1,3 +1,4 @@
+import { PageWrapper } from '../page-wrapper';
 import { getProjects } from './get-projects';
 import { ProjectCard } from './project-card';
 
@@ -9,7 +10,7 @@ export default async function Page() {
   const projects = await getProjects();
 
   return (
-    <>
+    <PageWrapper>
       <h4 className="mb-4 mt-20 font-sans text-4xl font-bold leading-tight">
         Projects
       </h4>
@@ -18,6 +19,6 @@ export default async function Page() {
           <ProjectCard key={project.title} project={project} />
         ))}
       </section>
-    </>
+    </PageWrapper>
   );
 }
