@@ -21,10 +21,10 @@ async function getProjects(): Promise<Project[]> {
       websiteUrl: 'https://www.accountsjs.com',
     },
     {
-      title: 'Twoblocks',
-      description: 'Free and open source 2fa manager for Stacks wallets.',
-      githubUrl: 'https://github.com/pradel/twoblocks',
-      websiteUrl: 'https://twoblocks.leopradel.com/',
+      title: 'Ledokku',
+      description: 'Beautiful web UI for all things Dokku.',
+      githubUrl: 'https://github.com/ledokku/ledokku',
+      websiteUrl: 'https://github.com/ledokku/ledokku',
     },
     {
       title: 'react-responsive-modal',
