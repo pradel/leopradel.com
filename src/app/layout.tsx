@@ -27,6 +27,11 @@ export const metadata = {
     site: '@leopradel',
     creator: '@leopradel',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://www.leopradel.com/rss.xml',
+    },
+  },
 };
 
 export default function RootLayout({

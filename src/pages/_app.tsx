@@ -11,15 +11,6 @@ import '../styles/index.css';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <React.Fragment>
-      <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS Feed for leopradel.com"
-          href="/feed/"
-        />
-      </Head>
-
       <Component {...pageProps} />
     </React.Fragment>
   );
