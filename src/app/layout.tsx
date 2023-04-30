@@ -6,6 +6,26 @@ import { Footer } from './footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const title = "Léo Pradel's blog";
+const description =
+  'Co-founder @sigleapp • @ledokku • @accountsjs • Sharing the journey and thoughts on Web3 and tech.';
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: 'https://www.leopradel.com',
+    siteName: title,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@leopradel',
+    creator: '@leopradel',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
