@@ -20,6 +20,8 @@ export const metadata = {
     siteName: title,
   },
   twitter: {
+    title,
+    description,
     card: 'summary_large_image',
     site: '@leopradel',
     creator: '@leopradel',
