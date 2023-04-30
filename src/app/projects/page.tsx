@@ -13,7 +13,7 @@ export default async function Page() {
       <h4 className="mb-4 mt-20 font-sans text-4xl font-bold leading-tight">
         Projects
       </h4>
-      <section className="-mx-2 lg:flex lg:flex-wrap">
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
