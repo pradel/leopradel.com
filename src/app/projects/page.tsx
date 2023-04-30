@@ -1,8 +1,63 @@
-import React from 'react';
-import { NextSeo } from 'next-seo';
 import { StarFilledIcon } from '@radix-ui/react-icons';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
+
+export const runtime = 'edge';
+// Revalidate this page every 1 hour
+export const revalidate = 60 * 60;
+
+async function getProjects(): Promise<Project[]> {
+  let projects: Project[] = [
+    {
+      title: 'Sigle',
+      description: 'A beautiful decentralized and open source blog maker.',
+      githubUrl: 'https://github.com/sigle/sigle',
+      twitterUrl: 'https://twitter.com/sigleapp',
+      websiteUrl: 'https://www.sigle.io',
+    },
+    {
+      title: 'accounts-js',
+      description:
+        'Fullstack authentication and accounts-management for Javascript.',
+      githubUrl: 'https://github.com/accounts-js/accounts',
+      websiteUrl: 'https://www.accountsjs.com',
+    },
+    {
+      title: 'Twoblocks',
+      description: 'Free and open source 2fa manager for Stacks wallets.',
+      githubUrl: 'https://github.com/pradel/twoblocks',
+      websiteUrl: 'https://twoblocks.leopradel.com/',
+    },
+    {
+      title: 'react-responsive-modal',
+      description: 'Simple responsive react modal.',
+      githubUrl: 'https://github.com/pradel/react-responsive-modal',
+      websiteUrl: 'https://react-responsive-modal.leopradel.com/',
+    },
+  ];
+
+  projects = await Promise.all(
+    projects.map(async (project) => {
+      const githubOrg = project.githubUrl.split('/')[3];
+      const githubRepo = project.githubUrl.split('/')[4];
+      const data = await fetch(
+        `https://api.github.com/repos/${githubOrg}/${githubRepo}`
+      );
+      const json = await data.json();
+      project.githubStarsCount = json.stargazers_count;
+      return project;
+    })
+  );
+
+  return projects;
+}
+
+interface Project {
+  title: string;
+  description: string;
+  githubUrl: string;
+  twitterUrl?: string;
+  websiteUrl: string;
+  githubStarsCount?: number;
+}
 
 interface ProjectProps {
   project: Project;
@@ -72,27 +127,11 @@ const Project = ({ project }: ProjectProps) => {
   );
 };
 
-const title = 'Projects - Leo Pradel';
-const url = 'https://leopradel.com/projects';
+export default async function Page() {
+  const projects = await getProjects();
 
-interface ProjectsPageProps {
-  projects: Project[];
-}
-
-const Projects = ({ projects }: ProjectsPageProps) => (
-  <React.Fragment>
-    <NextSeo
-      title={title}
-      canonical={url}
-      openGraph={{
-        url,
-        title,
-      }}
-    />
-
-    <Header />
-
-    <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
+  return (
+    <>
       <h4 className="font-sans leading-tight text-4xl font-bold mt-20 mb-4">
         Projects
       </h4>
@@ -101,71 +140,6 @@ const Projects = ({ projects }: ProjectsPageProps) => (
           <Project key={project.title} project={project} />
         ))}
       </section>
-    </main>
-
-    <Footer />
-  </React.Fragment>
-);
-
-interface Project {
-  title: string;
-  description: string;
-  githubUrl: string;
-  twitterUrl?: string;
-  websiteUrl: string;
-  githubStarsCount?: number;
-}
-
-export async function getStaticProps() {
-  let projects: Project[] = [
-    {
-      title: 'Sigle',
-      description: 'A beautiful decentralized and open source blog maker.',
-      githubUrl: 'https://github.com/sigle/sigle',
-      twitterUrl: 'https://twitter.com/sigleapp',
-      websiteUrl: 'https://www.sigle.io',
-    },
-    {
-      title: 'accounts-js',
-      description:
-        'Fullstack authentication and accounts-management for Javascript.',
-      githubUrl: 'https://github.com/accounts-js/accounts',
-      websiteUrl: 'https://www.accountsjs.com',
-    },
-    {
-      title: 'Twoblocks',
-      description: 'Free and open source 2fa manager for Stacks wallets.',
-      githubUrl: 'https://github.com/pradel/twoblocks',
-      websiteUrl: 'https://twoblocks.leopradel.com/',
-    },
-    {
-      title: 'react-responsive-modal',
-      description: 'Simple responsive react modal.',
-      githubUrl: 'https://github.com/pradel/react-responsive-modal',
-      websiteUrl: 'https://react-responsive-modal.leopradel.com/',
-    },
-  ];
-
-  projects = await Promise.all(
-    projects.map(async (project) => {
-      const githubOrg = project.githubUrl.split('/')[3];
-      const githubRepo = project.githubUrl.split('/')[4];
-      const data = await fetch(
-        `https://api.github.com/repos/${githubOrg}/${githubRepo}`
-      );
-      const json = await data.json();
-      project.githubStarsCount = json.stargazers_count;
-      return project;
-    })
+    </>
   );
-
-  return {
-    props: {
-      projects,
-    },
-    // Regenerate the page every hour
-    revalidate: 60 * 60,
-  };
 }
-
-export default Projects;
