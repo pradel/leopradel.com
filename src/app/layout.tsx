@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from './header';
 import { Footer } from './footer';
+import Fathom from './fathom';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,7 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, 'antialiased')}>
+      <body
+        className={clsx(inter.className, 'antialiased')}
+        suppressHydrationWarning={true}
+      >
+        <Fathom />
         <Header />
         <main className="mx-auto max-w-3xl px-6 xl:px-12 mt-20 mb-12">
           {children}
