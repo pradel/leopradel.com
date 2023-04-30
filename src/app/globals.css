@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Lato';
-}
-
 /* customise typography plugin */
 /* TODO migrate to tailwind config js file */
 .prose pre {

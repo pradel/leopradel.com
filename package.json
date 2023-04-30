@@ -8,7 +8,7 @@
     "build": "pnpm generate:json && next build",
     "start": "next start",
     "generate:json": "pnpm ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
-    "prettier": "prettier --write '**/*.{json,md,js,ts,jsx,tsx,yml,css}'"
+    "format": "prettier --write '**/*' --ignore-unknown"
   },
   "prettier": {
     "singleQuote": true
@@ -17,10 +17,11 @@
     "@fontsource/lato": "4.5.9",
     "@fontsource/lustria": "4.5.10",
     "@radix-ui/react-icons": "1.3.0",
+    "clsx": "1.2.1",
     "date-fns": "2.29.3",
     "fathom-client": "3.5.0",
     "feed": "4.2.2",
-    "next": "13.2.4",
+    "next": "13.3.1",
     "next-seo": "6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,17 +30,16 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.9",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.32",
-    "@types/react-dom": "18.0.11",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
     "autoprefixer": "10.4.14",
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
     "gray-matter": "4.0.3",
-    "highlight.js": "11.6.0",
-    "next-compose-plugins": "2.2.1",
-    "postcss": "8.4.21",
-    "prettier": "2.8.7",
+    "highlight.js": "11.8.0",
+    "postcss": "8.4.23",
+    "prettier": "2.8.8",
     "reading-time": "1.5.0",
     "rehype-autolink-headings": "6.1.1",
     "rehype-highlight": "5.0.2",
@@ -48,8 +48,8 @@
     "rehype-stringify": "9.0.3",
     "remark-parse": "10.0.1",
     "remark-rehype": "10.1.0",
-    "tailwindcss": "3.3.1",
+    "tailwindcss": "3.3.2",
     "ts-node": "10.9.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   }
 }

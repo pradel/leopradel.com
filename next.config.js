@@ -1,20 +1,8 @@
-const withPlugins = require('next-compose-plugins');
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-      {
-        source: '/feed',
-        destination: '/api/rss',
-      },
-    ];
+  experimental: {
+    appDir: true,
   },
 };
 
-module.exports = (phase) => {
-  return withPlugins([], nextConfig)(phase, {});
-};
+module.exports = nextConfig;
