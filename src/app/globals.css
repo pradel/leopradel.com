@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* customise typography plugin */
+/* TODO migrate to tailwind config js file */
+.prose pre {
+  @apply bg-gray-100;
+}
+.prose code {
+  @apply bg-gray-100 font-normal px-1;
+}
+.prose pre code {
+  @apply text-sm text-gray-600;
+}
+.prose a {
+  @apply text-watermelon font-semibold no-underline border-b border-watermelon;
+}
