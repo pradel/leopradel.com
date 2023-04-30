@@ -4,19 +4,19 @@ import allPosts from '../../blog/posts.json';
 const websiteUrl = 'https://www.leopradel.com';
 
 const author = {
-  name: 'Leo Pradel',
+  name: 'Léo Pradel',
   link: websiteUrl,
 };
 
 export async function GET() {
   const feed = new Feed({
-    title: 'Leo Pradel',
+    title: 'Léo Pradel',
     description: 'Oss contributor passionate about nodejs, react and graphql.',
     id: websiteUrl,
     link: websiteUrl,
     language: 'en',
     favicon: 'http://leopradel.com/apple-touch-icon.png',
-    copyright: `All rights reserved ${new Date().getFullYear()}, Leo Pradel`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, Léo Pradel`,
     author,
   });
 

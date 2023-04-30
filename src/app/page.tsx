@@ -23,9 +23,9 @@ export default async function Page() {
           />
         </div>
         <div className="ml-4">
-          <h2 className="font-sans text-xl font-bold leading-tight">
-            Leo Pradel
-          </h2>
+          <h1 className="font-sans text-xl font-bold leading-tight">
+            Léo Pradel
+          </h1>
           <p className="text-sm text-gray-800">
             Co-founder of{' '}
             <a
@@ -57,9 +57,9 @@ export default async function Page() {
       </section>
 
       <section>
-        <h4 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
+        <h2 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
           Latest posts
-        </h4>
+        </h2>
 
         <div className="flex flex-col space-y-6">
           {latestPosts.map((post) => (
