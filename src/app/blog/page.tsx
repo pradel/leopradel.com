@@ -33,8 +33,8 @@ export default async function Page() {
         {Object.keys(postsByYears)
           .reverse()
           .map((year) => (
-            <div key={year}>
-              <div className="mb-2 flex items-center text-sm font-bold text-gray-800">
+            <div key={year} className="space-y-4">
+              <div className=" flex items-center text-sm font-bold text-gray-800">
                 <span className="mr-2 text-watermelon">
                   <ChevronRightIcon />
                 </span>
