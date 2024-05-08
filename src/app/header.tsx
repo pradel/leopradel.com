@@ -30,7 +30,7 @@ export const Header = () => {
                   'transition-colors rounded px-3 py-2 font-medium hover:bg-gray-100',
                   {
                     'font-bold': path === href,
-                  }
+                  },
                 )}
               >
                 {label}
