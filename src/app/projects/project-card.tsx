@@ -31,7 +31,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
               rel="noopener noreferrer"
             >
               <svg
-                className="h-4 w-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
+                className="size-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -49,7 +49,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
               rel="noopener noreferrer"
             >
               <svg
-                className="h-4 w-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
+                className="size-4 fill-current text-gray-600 transition-colors duration-150 ease-in-out hover:text-watermelon"
                 viewBox="0 0 24 24"
               >
                 <title>GitHub icon</title>
@@ -60,7 +60,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
         </p>
         {project.githubStarsCount && (
           <p className="flex items-center space-x-1 text-sm text-gray-600">
-            <StarFilledIcon className="h-3 w-3" />
+            <StarFilledIcon className="size-3" />
             <span>
               {new Intl.NumberFormat().format(project.githubStarsCount)}
             </span>
