@@ -12,7 +12,7 @@ export default async function Page() {
   return (
     <PageWrapper>
       <section className="flex items-center">
-        <div className="h-16 w-16">
+        <div className="size-16">
           <Image
             className="rounded-full"
             src={avatarImage}

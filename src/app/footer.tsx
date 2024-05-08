@@ -10,20 +10,20 @@ import { TwitterIcon } from '../icons/Twitter';
 const links = [
   {
     href: config.twitterUrl,
-    icon: <TwitterIcon className="h-5 w-5" />,
+    icon: <TwitterIcon className="size-5" />,
     label: 'Twitter',
   },
   {
     href: config.githubUrl,
-    icon: <GithubIcon className="h-5 w-5" />,
+    icon: <GithubIcon className="size-5" />,
     label: 'Github',
   },
   {
     href: config.productHunturl,
-    icon: <ProducthuntIcon className="h-5 w-5" />,
+    icon: <ProducthuntIcon className="size-5" />,
     label: 'Product Hunt',
   },
-  { href: config.rssUrl, icon: <RssIcon className="h-5 w-5" />, label: 'RSS' },
+  { href: config.rssUrl, icon: <RssIcon className="size-5" />, label: 'RSS' },
 ];
 
 export const Footer = () => {
