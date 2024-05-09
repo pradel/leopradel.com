@@ -9,7 +9,7 @@
     "build": "pnpm generate:json && next build",
     "start": "next start",
     "generate:json": "pnpm ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
-    "format": "rome format --write ."
+    "format": "biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true ."
   },
   "prettier": {
     "singleQuote": true
