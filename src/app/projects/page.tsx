@@ -2,7 +2,6 @@ import { PageWrapper } from '../page-wrapper';
 import { getProjects } from './get-projects';
 import { ProjectCard } from './project-card';
 
-export const runtime = 'edge';
 // Revalidate this page every 1 hour
 export const revalidate = 60 * 60;
 
