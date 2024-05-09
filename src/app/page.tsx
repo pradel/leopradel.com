@@ -26,18 +26,52 @@ export default async function Page() {
           <h1 className="font-sans text-xl font-bold leading-tight">
             Léo Pradel
           </h1>
-          <p className="text-sm text-gray-800">
-            Co-founder of{' '}
+          <p className="mt-1 text-sm text-gray-800">
+            Hi, I'm Léo, a software engineer passionate about open-source and
+            web3. I write about my journey, projects, and things I am excited
+            about.
+          </p>
+          <p className="mt-1 text-sm text-gray-800">
+            Curently working at{' '}
             <a
+              className="hover:underline"
+              href=" https://www.fxhash.xyz/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              fx(hash)
+            </a>
+            , prev{' '}
+            <a
+              className="hover:underline"
+              href="https://bitwala.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @Bitwala (Nuri)
+            </a>
+            ,{' '}
+            <a
+              className="hover:underline"
+              href="https://www.aestetype.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @Aestetype
+            </a>
+            . Co-founder of{' '}
+            <a
+              className="hover:underline"
               href="https://www.sigle.io"
               target="_blank"
               rel="noopener noreferrer"
             >
               @sigleapp
             </a>{' '}
-            | Maker,{' '}
+            ,{' '}
             <a
-              href="https://www.ledokku.com"
+              className="hover:underline"
+              href="https://github.com/ledokku/ledokku"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -45,13 +79,14 @@ export default async function Page() {
             </a>
             ,{' '}
             <a
+              className="hover:underline"
               href="https://www.accountsjs.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               @accountsjs
-            </a>{' '}
-            | oss contributor
+            </a>
+            .
           </p>
         </div>
       </section>
