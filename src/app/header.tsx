@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/tailwind';
 
@@ -19,23 +18,17 @@ export const Header = () => {
       <ul className="flex justify-end space-x-3">
         {links.map(({ href, label }) => (
           <li key={`${href}${label}`}>
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-              }}
+            <Link
+              href={href}
+              className={cn(
+                'transition rounded px-3 py-2 font-medium hover:bg-gray-100',
+                {
+                  'font-bold': path === href,
+                },
+              )}
             >
-              <Link
-                href={href}
-                className={cn(
-                  'transition-colors rounded px-3 py-2 font-medium hover:bg-gray-100',
-                  {
-                    'font-bold': path === href,
-                  },
-                )}
-              >
-                {label}
-              </Link>
-            </motion.div>
+              {label}
+            </Link>
           </li>
         ))}
       </ul>

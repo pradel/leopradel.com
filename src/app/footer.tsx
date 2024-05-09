@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { config } from '../config';
 import { GithubIcon } from '../icons/Github';
 import { ProducthuntIcon } from '../icons/Producthunt';
@@ -32,21 +31,15 @@ export const Footer = () => {
       <ul className="flex justify-center space-x-3">
         {links.map(({ href, icon, label }) => (
           <li key={href}>
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-              }}
+            <a
+              className="inline-block rounded p-2 text-gray-600 transition hover:bg-gray-100 hover:scale-110"
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                className="inline-block rounded p-2 text-gray-600 transition-colors hover:bg-gray-100"
-                href={href}
-                aria-label={label}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {icon}
-              </a>
-            </motion.div>
+              {icon}
+            </a>
           </li>
         ))}
       </ul>
