@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from './header';
@@ -11,7 +12,8 @@ const title = "Léo Pradel's blog";
 const description =
   'Co-founder @sigleapp • @ledokku • @accountsjs • Sharing the journey and thoughts on Web3 and tech.';
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL('https://leopradel.com'),
   title,
   description,
   openGraph: {
