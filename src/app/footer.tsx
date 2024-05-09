@@ -32,7 +32,7 @@ export const Footer = () => {
         {links.map(({ href, icon, label }) => (
           <li key={href}>
             <a
-              className="inline-block rounded p-2 text-gray-600 transition hover:bg-gray-100 hover:scale-110"
+              className="inline-block rounded p-2 text-gray-600 transition hover:scale-110 hover:bg-gray-100"
               href={href}
               aria-label={label}
               target="_blank"
