@@ -18,7 +18,6 @@ function TrackPageView() {
 
   // Record a pageview when route changes
   useEffect(() => {
-    console.log('Track pageview', pathname, searchParams.toString());
     if (!pathname) return;
 
     trackPageview({
