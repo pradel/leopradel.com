@@ -30,6 +30,7 @@
     "unified": "11.0.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "14.2.3",
     "@tailwindcss/typography": "0.5.13",
     "@types/node": "20.12.11",
     "@types/react": "18.3.1",
