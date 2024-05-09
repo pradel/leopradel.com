@@ -7,7 +7,7 @@ import { getBlogPostsPreview } from '../lib/get-blog-posts-preview';
 import { PageWrapper } from './page-wrapper';
 
 export default async function Page() {
-  const latestPosts = getBlogPostsPreview().slice(0, 3);
+  const latestPosts = getBlogPostsPreview().slice(0, 4);
 
   return (
     <PageWrapper>
