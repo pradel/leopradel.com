@@ -2,7 +2,7 @@
   "name": "leopradel.com",
   "private": true,
   "version": "0.0.1",
-  "packageManager": "pnpm@9.0.5",
+  "packageManager": "pnpm@9.1.0",
   "author": "Pradel Léo <pradel.leo@gmail.com>",
   "scripts": {
     "dev": "pnpm generate:json && next",
