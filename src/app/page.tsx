@@ -27,9 +27,9 @@ export default async function Page() {
             Léo Pradel
           </h1>
           <p className="mt-1 text-sm text-gray-800">
-            Hi, I'm Léo, a software engineer passionate about open-source and
-            web3. I write about my journey, projects, and things I am excited
-            about.
+            Hi, I{"'"}m Léo, a software engineer passionate about open-source
+            and web3. I write about my journey, projects, and things I am
+            excited about.
           </p>
           <p className="mt-1 text-sm text-gray-800">
             Curently working at{' '}
