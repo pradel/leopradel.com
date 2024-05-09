@@ -12,12 +12,19 @@ function TrackPageView() {
   useEffect(() => {
     load(config.fathomSiteId, {
       includedDomains: ['www.leopradel.com'],
+      auto: false,
     });
   }, []);
 
   // Record a pageview when route changes
   useEffect(() => {
-    trackPageview();
+    console.log('Track pageview', pathname, searchParams.toString());
+    if (!pathname) return;
+
+    trackPageview({
+      url: pathname + searchParams.toString(),
+      referrer: document.referrer,
+    });
   }, [pathname, searchParams]);
 
   return null;
