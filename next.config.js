@@ -1,20 +1,7 @@
-const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@next/bundle-analyzer')();
 
-const nextConfig = {
-  rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-      {
-        source: '/feed',
-        destination: '/api/rss',
-      },
-    ];
-  },
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
 
-module.exports = (phase) => {
-  return withPlugins([], nextConfig)(phase, {});
-};
+module.exports =
+  process.env.ANALYZE === 'true' ? withBundleAnalyzer(nextConfig) : nextConfig;

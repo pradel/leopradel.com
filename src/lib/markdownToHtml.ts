@@ -6,6 +6,8 @@ import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
+import { common } from 'lowlight';
+import dockerfile from 'highlight.js/lib/languages/dockerfile';
 
 export const markdownToHtml = async (markdown: string) => {
   const result = await unified()
@@ -14,56 +16,7 @@ export const markdownToHtml = async (markdown: string) => {
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings)
     .use(rehypeSanitize)
-    .use(rehypeHighlight, {
-      languages: {
-        // https://github.com/highlightjs/highlight.js/issues/1471
-        graphql: function (e: any) {
-          return {
-            aliases: ['gql'],
-            keywords: {
-              keyword:
-                'query mutation subscription|10 type input schema directive interface union scalar fragment|10 enum on ...',
-              literal: 'true false null',
-            },
-            contains: [
-              e.HASH_COMMENT_MODE,
-              e.QUOTE_STRING_MODE,
-              e.NUMBER_MODE,
-              {
-                className: 'type',
-                begin: '[^\\w][A-Z][a-z]',
-                end: '\\W',
-                excludeEnd: !0,
-              },
-              {
-                className: 'literal',
-                begin: '[^\\w][A-Z][A-Z]',
-                end: '\\W',
-                excludeEnd: !0,
-              },
-              {
-                className: 'variable',
-                begin: '\\$',
-                end: '\\W',
-                excludeEnd: !0,
-              },
-              {
-                className: 'keyword',
-                begin: '[.]{2}',
-                end: '\\.',
-              },
-              {
-                className: 'meta',
-                begin: '@',
-                end: '\\W',
-                excludeEnd: !0,
-              },
-            ],
-            illegal: /([;<']|BEGIN)/,
-          };
-        },
-      },
-    })
+    .use(rehypeHighlight, { languages: { ...common, dockerfile } })
     .use(rehypeStringify)
     .process(markdown);
   return result.toString();

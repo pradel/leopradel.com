@@ -1,28 +1,26 @@
-import { NextApiHandler } from 'next';
 import { Feed } from 'feed';
-import posts from '../../blog/posts.json';
+import allPosts from '../../blog/posts.json';
 
 const websiteUrl = 'https://www.leopradel.com';
 
 const author = {
-  name: 'Leo Pradel',
+  name: 'Léo Pradel',
   link: websiteUrl,
 };
 
-const rss: NextApiHandler = async (_, res) => {
+export async function GET() {
   const feed = new Feed({
-    title: 'Leo Pradel',
+    title: 'Léo Pradel',
     description: 'Oss contributor passionate about nodejs, react and graphql.',
     id: websiteUrl,
     link: websiteUrl,
     language: 'en',
-    // image: 'http://example.com/image.png',
     favicon: 'http://leopradel.com/apple-touch-icon.png',
-    copyright: `All rights reserved ${new Date().getFullYear()}, Leo Pradel`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, Léo Pradel`,
     author,
   });
 
-  posts.forEach((post) => {
+  allPosts.forEach((post) => {
     feed.addItem({
       title: post.title,
       id: post.slug,
@@ -36,10 +34,9 @@ const rss: NextApiHandler = async (_, res) => {
     });
   });
 
-  res.writeHead(200, {
-    'Content-Type': 'application/xml',
+  return new Response(feed.rss2(), {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
   });
-  res.end(feed.rss2());
-};
-
-export default rss;
+}

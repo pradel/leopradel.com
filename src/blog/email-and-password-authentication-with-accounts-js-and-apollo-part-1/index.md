@@ -140,7 +140,7 @@ const accountsServer = new AccountsServer(
   {
     // We pass a list of services to the server, in this example we just use the password service
     password: accountsPassword,
-  }
+  },
 );
 ```
 
@@ -233,7 +233,7 @@ const accountsServer = new AccountsServer(
   },
   {
     password: accountsPassword,
-  }
+  },
 );
 
 // We generate the accounts-js GraphQL module

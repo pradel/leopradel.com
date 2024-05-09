@@ -1,0 +1,79 @@
+import Image from 'next/image';
+import avatarImage from '../../public/avatar.jpg';
+import Link from 'next/link';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { BlogPostPreview } from '../components/blog-post-preview';
+import { getBlogPostsPreview } from '../lib/get-blog-posts-preview';
+import { PageWrapper } from './page-wrapper';
+
+export default async function Page() {
+  const latestPosts = getBlogPostsPreview().slice(0, 3);
+
+  return (
+    <PageWrapper>
+      <section className="flex items-center">
+        <div className="size-16">
+          <Image
+            className="rounded-full"
+            src={avatarImage}
+            height={80}
+            width={80}
+            priority={true}
+            alt="Avatar"
+          />
+        </div>
+        <div className="ml-4">
+          <h1 className="font-sans text-xl font-bold leading-tight">
+            Léo Pradel
+          </h1>
+          <p className="text-sm text-gray-800">
+            Co-founder of{' '}
+            <a
+              href="https://www.sigle.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @sigleapp
+            </a>{' '}
+            | Maker,{' '}
+            <a
+              href="https://www.ledokku.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @ledokku
+            </a>
+            ,{' '}
+            <a
+              href="https://www.accountsjs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @accountsjs
+            </a>{' '}
+            | oss contributor
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="mb-6 mt-16 font-sans text-4xl font-bold leading-tight">
+          Latest posts
+        </h2>
+
+        <div className="flex flex-col space-y-6">
+          {latestPosts.map((post) => (
+            <BlogPostPreview key={post.slug} post={post} />
+          ))}
+        </div>
+
+        <Link href={`/blog`} className="mt-6 flex items-center hover:underline">
+          See all posts
+          <span className="ml-2">
+            <ArrowRightIcon />
+          </span>
+        </Link>
+      </section>
+    </PageWrapper>
+  );
+}
