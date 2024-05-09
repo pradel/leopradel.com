@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { config } from '../config';
 import { GithubIcon } from '../icons/Github';
