@@ -9,7 +9,7 @@
     "build": "pnpm generate:json && next build",
     "start": "next start",
     "generate:json": "pnpm ts-node --project scripts/tsconfig.json scripts/generateJson.ts",
-    "format": "prettier --write '**/*' --ignore-unknown"
+    "format": "biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true ."
   },
   "prettier": {
     "singleQuote": true
@@ -29,6 +29,7 @@
     "unified": "11.0.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.3",
     "@next/bundle-analyzer": "14.2.3",
     "@tailwindcss/typography": "0.5.13",
     "@types/node": "20.12.11",
