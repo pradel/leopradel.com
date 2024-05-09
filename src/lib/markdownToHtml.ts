@@ -6,6 +6,8 @@ import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
+import { common } from 'lowlight';
+import dockerfile from 'highlight.js/lib/languages/dockerfile';
 
 export const markdownToHtml = async (markdown: string) => {
   const result = await unified()
@@ -14,7 +16,7 @@ export const markdownToHtml = async (markdown: string) => {
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings)
     .use(rehypeSanitize)
-    .use(rehypeHighlight)
+    .use(rehypeHighlight, { languages: { ...common, dockerfile } })
     .use(rehypeStringify)
     .process(markdown);
   return result.toString();
