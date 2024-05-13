@@ -3,6 +3,13 @@ import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { getBlogPostsPreview } from '@/lib/get-blog-posts-preview';
 import { BlogPostPreview } from '@/components/blog-post-preview';
 import { PageWrapper } from '../page-wrapper';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `/blog`,
+  },
+};
 
 interface BlogPost {
   slug: string;

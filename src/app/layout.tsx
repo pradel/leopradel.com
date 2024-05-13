@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     creator: '@leopradel',
   },
   alternates: {
+    canonical: `/`,
     types: {
       'application/rss+xml': 'https://www.leopradel.com/rss.xml',
     },

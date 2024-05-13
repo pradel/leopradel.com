@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import readingTime from 'reading-time';
 import Balancer from 'react-wrap-balancer';
 import { format } from 'date-fns';
@@ -35,7 +36,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const post = await getPost(params.slug);
   const url = `https://leopradel.com/blog/${post.slug}`;
 
@@ -50,9 +51,7 @@ export async function generateMetadata({
       description: post.description,
       url,
       type: 'article',
-      article: {
-        publishedTime: new Date(post.date).toISOString(),
-      },
+      publishedTime: new Date(post.date).toISOString(),
     },
   };
 }
