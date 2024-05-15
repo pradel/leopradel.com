@@ -15,7 +15,7 @@ export async function GET() {
     id: websiteUrl,
     link: websiteUrl,
     language: 'en',
-    favicon: 'http://leopradel.com/apple-touch-icon.png',
+    favicon: 'http://www.leopradel.com/apple-touch-icon.png',
     copyright: `All rights reserved ${new Date().getFullYear()}, Léo Pradel`,
     author,
   });

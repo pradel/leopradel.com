@@ -38,7 +38,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const post = await getPost(params.slug);
-  const url = `https://leopradel.com/blog/${post.slug}`;
+  const url = `https://www.leopradel.com/blog/${post.slug}`;
 
   return {
     title: post.title,

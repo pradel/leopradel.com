@@ -13,7 +13,7 @@ const description =
   'Co-founder @sigleapp • @ledokku • @accountsjs • Sharing the journey and thoughts on Web3 and tech.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leopradel.com'),
+  metadataBase: new URL('https://www.leopradel.com'),
   title,
   description,
   openGraph: {
